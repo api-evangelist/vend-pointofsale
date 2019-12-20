@@ -1,0 +1,3110 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "0.9",
+        "title": "API 0.9",
+        "description": "The current state of the original Vend API.",
+        "termsOfService": "https:\/\/www.vendhq.com\/terms"
+    },
+    "servers": [
+        "http:\/\/{domain_prefix}.vendhq.com\/api"
+    ],
+    "paths": {
+        "\/consignment": {
+            "get": {
+                "summary": "List consignments",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of consignments.",
+                "operationId": "ListConsignments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "since",
+                        "in": "query",
+                        "description": "If included, returns only items modified since the given time. The provided date and time should be in **UTC** and formatted according to **ISO 8601**."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The number of the page of results to be returned."
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "The size of the page of results to be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a consignment",
+                "description": "Creates a new consignment.",
+                "operationId": "NewConsignment",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/consignment\/{consignment_id}": {
+            "get": {
+                "summary": "Get a consignment by ID",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\\s\\s\n\\s\\s\nReturns a single consignment with a given ID.",
+                "operationId": "GetConsignmentByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "path",
+                        "description": "The ID of the consignment to get."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a consignment",
+                "description": "Updates a consignment with the given ID.",
+                "operationId": "UpdateConsignment",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "path",
+                        "description": "The ID of the consignment to get."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a consignment",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nDeletes the consignment with a given ID.",
+                "operationId": "DeleteConsignment",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "path",
+                        "description": "The ID of the consignment to get."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/consignment_product": {
+            "get": {
+                "summary": "List consignment products",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of consignment products.",
+                "operationId": "ListConsignmentProducts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "query",
+                        "description": "The ID of a consignment to filter the items for. Shouldn't be used together with the `product_id` parameter."
+                    },
+                    {
+                        "name": "product_id",
+                        "in": "query",
+                        "description": "The ID of a product to filter the items for. Shouldn't be used together with the `consignment_id` parameter."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The number of the page of results to be returned."
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "The size of the page of results to be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a consignment product",
+                "description": "Adds a new product to a consignment.",
+                "operationId": "NewConsignmentProduct",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/consignment_product\/{consignment_product_id}": {
+            "get": {
+                "summary": "Get a single consignment product by ID",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single consignment product.",
+                "operationId": "GetConsignmentProductByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_product_id",
+                        "in": "path",
+                        "description": "The ID of the consignment to get."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a consignment product",
+                "description": "Updates an existing consignment product.",
+                "operationId": "UpdateConsignmentProduct",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_product_id",
+                        "in": "path",
+                        "description": "The ID of the consignment to get."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a consignment product",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nDeletes an item from the consignment.",
+                "operationId": "DeleteConsignmentProduct",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_product_id",
+                        "in": "path",
+                        "description": "The ID of the consignment to get."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/customers": {
+            "get": {
+                "summary": "List customers",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of customers.",
+                "operationId": "ListCustomers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "If included, searches for customers with the given unique ID. The id option cannot be used with the `code` or `email` options."
+                    },
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "If included, searches for customers with the given customer code. The code option cannot be used with id or email options."
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "If included, searches for customers with the given email address. This is an exact match search. The email option cannot be used with the id or code options."
+                    },
+                    {
+                        "name": "since",
+                        "in": "query",
+                        "description": "If included, returns only items modified since the given time. The provided date and time should be in **UTC** and formatted according to **ISO 8601**."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The number of the page of results to be returned."
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "The size of the page of results to be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create or update a customer",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single new or updated customer object.",
+                "operationId": "CreateUpdateCustomer",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/outlets": {
+            "get": {
+                "summary": "List outlets",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of outlets.",
+                "operationId": "ListOutlets",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/payment_types": {
+            "get": {
+                "summary": "List payment types",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of payment types.",
+                "operationId": "ListPaymentTypes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/products": {
+            "get": {
+                "summary": "List products",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of products.",
+                "operationId": "ListProducts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "order_by",
+                        "in": "query",
+                        "description": "Defines the attribute by which the query results should be ordered. One of: `id`(recommended), `updated_at`(default), name."
+                    },
+                    {
+                        "name": "order_direction",
+                        "in": "query",
+                        "description": "Selects the order direction of the results returned. On of `ASC`(default), `DESC`."
+                    },
+                    {
+                        "name": "since",
+                        "in": "query",
+                        "description": "If included, returns only items modified since the given time. The provided date and time should be in **UTC** and formatted according to **ISO 8601**."
+                    },
+                    {
+                        "name": "active",
+                        "in": "query",
+                        "description": "If included, only active or inactive products will be returned. One of: '\"0\"' or '\"1\"'."
+                    },
+                    {
+                        "name": "sku",
+                        "in": "query",
+                        "description": "If included, only the product with given sku will be returned. It may happen that there will be more products with the same sku. In this case all of them will be returned."
+                    },
+                    {
+                        "name": "handle",
+                        "in": "query",
+                        "description": "If included, only products with given handle will be returned. This is useful for filtering all variants of a product, since all variants share the same handle."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The number of the page of results to be returned."
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "The size of the page of results to be returned."
+                    },
+                    {
+                        "name": "deleted",
+                        "in": "query",
+                        "description": "Indicates whether deleted items should be included in the result."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create or update a product",
+                "description": "Returns a single new or updated product object.",
+                "operationId": "CreateUpdateProduct",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/products\/{product_id}": {
+            "get": {
+                "summary": "Get a single product by ID",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns an array with a single product inside it.",
+                "operationId": "GetProductByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_id",
+                        "in": "path",
+                        "description": "An ID of an existing product."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a product",
+                "description": "Deleted a product by ID.",
+                "operationId": "DeleteProduct",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_id",
+                        "in": "path",
+                        "description": "An ID of an existing product."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/register_sales": {
+            "get": {
+                "summary": "List register sales",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of register sales.",
+                "operationId": "ListRegisterSales",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "since",
+                        "in": "query",
+                        "description": "If included, returns only items modified since the given time. The provided date and time should be in **UTC** and formatted according to **ISO 8601**."
+                    },
+                    {
+                        "name": "outlet_id",
+                        "in": "query",
+                        "description": "If included, returns only register sales made for the given outlet, identified by ID."
+                    },
+                    {
+                        "name": "status[]",
+                        "in": "query",
+                        "description": "If included, returns only register sales in the given state. The status[] parameter may be used more than once; returned sales will be in any of the specified states."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The number of the page of results to be returned."
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "The size of the page of results to be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create or update a register sale",
+                "description": "Returns a single new or updated product object.",
+                "operationId": "CreateUpdateRegisterSale",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/register_sales\/{sale_id}": {
+            "get": {
+                "summary": "Get a single register sale by ID",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single register sale with the given ID, in an array.",
+                "operationId": "GetRegisterSaleByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "sale_id",
+                        "in": "path",
+                        "description": "An ID of an existing sale"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/registers": {
+            "get": {
+                "summary": "List registers",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of registers.",
+                "operationId": "ListRegisters",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "deleted",
+                        "in": "query",
+                        "description": "Indicates whether deleted items should be included in the result."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/supplier": {
+            "get": {
+                "summary": "List suppliers",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of suppliers.",
+                "operationId": "ListSuppliers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The number of the page of results to be returned."
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "The size of the page of results to be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create or update a supplier",
+                "description": "Returns a single supplier object.",
+                "operationId": "CreateUpdateSupplier",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/supplier\/{supplier_id}": {
+            "get": {
+                "summary": "Get a single supplier by ID",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single supplier with the given ID.",
+                "operationId": "GetSupplierByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "supplier_id",
+                        "in": "path",
+                        "description": "An ID of an existing supplier object"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a supplier",
+                "description": "Deletes a single supplier by ID.",
+                "operationId": "DeleteSupplier",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "supplier_id",
+                        "in": "path",
+                        "description": "An ID of an existing supplier object"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/taxes": {
+            "get": {
+                "summary": "List taxes",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of taxes.",
+                "operationId": "ListTaxes",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a tax",
+                "description": "Creates a new tax.",
+                "operationId": "CreateTax",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/taxes\/{tax_id}": {
+            "get": {
+                "summary": "Get a single tax by ID",
+                "description": "Returns a single tax with the given ID.",
+                "operationId": "GetTaxByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "tax_id",
+                        "in": "path",
+                        "description": "An ID of an existing tax object."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/users": {
+            "get": {
+                "summary": "List users",
+                "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of users.",
+                "operationId": "ListUsers",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/webhooks": {
+            "get": {
+                "summary": "List webhooks",
+                "description": "Returns a list of webhooks.  *__NOTE:__ This endpoint will only return webhooks created by the application which is making the request.*",
+                "operationId": "ListWebhooks",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a webhook",
+                "description": "Creates and returns a new webhook.\n__NOTE:__ The `Content-Type` header for this request should be set to `application\/x-www-form-urlencoded`.",
+                "operationId": "CreateWebhook",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "formData",
+                        "description": "The value of this field should be set as a string representing a JSON payload like:\n`{\"url\":\"http:\/\/123456.ngrok.io\",\"active\":true,\"type\":\"product.update\"}`"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/webhooks\/{webhook_id}": {
+            "get": {
+                "summary": "Get a single webhook by ID",
+                "description": "Returns a single webhooks with the given ID.",
+                "operationId": "GetWebhookByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "webhook_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a webhook by ID",
+                "description": "Updates a webhook with the given `id`.\n__NOTE:__ The `Content-Type` header for this request should be set to `application\/x-www-form-urlencoded`.",
+                "operationId": "UpdateWebhook",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "webhook_id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "data",
+                        "in": "formData",
+                        "description": "The value of this field should be set as a string representing a JSON payload like:\n`{\"url\":\"http:\/\/123456.ngrok.io\",\"active\":true,\"type\":\"product.update\"}`"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a webhook by ID",
+                "description": "Deletes the webhook with the given ID.",
+                "operationId": "DeleteWebhook",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "webhook_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Consignment": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "retailer_id": {
+                        "description": "The ID of the retailer associated with this consignment.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "consignment_date": {
+                        "description": "The date when the consignment was created.",
+                        "type": "string"
+                    },
+                    "due_at": {
+                        "description": "The due date for the consignment.",
+                        "type": "string"
+                    },
+                    "received_at": {
+                        "description": "The date when the consignment was received.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "The ID of the outlet to which the goods are coming.",
+                        "type": "string"
+                    },
+                    "supplier_id": {
+                        "description": "The ID of the supplier associated with this consignment.",
+                        "type": "string"
+                    },
+                    "source_outlet_id": {
+                        "description": "The ID of the outlet from which the goods are coming. Only used for stock transfers.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of the consignment. One of: `OPEN`, `SENT`, `RECEIVED`, `CANCELLED`,  `STOCKTAKE`, `STOCKTAKE_COMPLETE`.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of the consignment. One of:  `SUPPLIER`, `OUTLET`, `STOCKTAKE`.",
+                        "type": "string"
+                    },
+                    "accounts_transaction_id": {
+                        "description": "The ID of a transaction in an external system associated with this consignment.",
+                        "type": "string"
+                    }
+                }
+            },
+            "ConsignmentBase": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "consignment_date": {
+                        "description": "The date when the consignment was created.",
+                        "type": "string"
+                    },
+                    "due_at": {
+                        "description": "The due date for the consignment.",
+                        "type": "string"
+                    },
+                    "received_at": {
+                        "description": "The date when the consignment was received.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "The ID of the outlet to which the goods are coming.",
+                        "type": "string"
+                    },
+                    "supplier_id": {
+                        "description": "The ID of the supplier associated with this consignment.",
+                        "type": "string"
+                    },
+                    "source_outlet_id": {
+                        "description": "The ID of the outlet from which the goods are coming. Only used for stock transfers.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of the consignment. One of: `OPEN`, `SENT`, `RECEIVED`, `CANCELLED`,  `STOCKTAKE`, `STOCKTAKE_COMPLETE`.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of the consignment. One of:  `SUPPLIER`, `OUTLET`, `STOCKTAKE`.",
+                        "type": "string"
+                    },
+                    "accounts_transaction_id": {
+                        "description": "The ID of a transaction in an external system associated with this consignment.",
+                        "type": "string"
+                    }
+                }
+            },
+            "ConsignmentCollection": {
+                "type": "object",
+                "properties": {
+                    "consignments": {
+                        "description": "An array of consignment objects.",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "consignments": {
+                "type": "array"
+            },
+            "pagination": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "description": "Total amount of objects matching the query.",
+                        "type": "integer"
+                    },
+                    "page": {
+                        "description": "Current page.",
+                        "type": "integer"
+                    },
+                    "page_size": {
+                        "description": "Current page size.",
+                        "type": "integer"
+                    },
+                    "pages": {
+                        "description": "The total amount of pages to iterate through.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ConsignmentProduct": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "consignment_id": {
+                        "description": "The ID of the consignment associated with this item.",
+                        "type": "string"
+                    },
+                    "product_id": {
+                        "description": "The ID of the product associated with this item.",
+                        "type": "string"
+                    },
+                    "count": {
+                        "description": "Quantity \"ordered\" for stock orders or \"expected\" for stock takes.",
+                        "type": "integer"
+                    },
+                    "received": {
+                        "description": "Quantity \"received\" for stock orders or \"counted\" for stock takes.",
+                        "type": "integer"
+                    },
+                    "cost": {
+                        "description": "Supply cost of the item for this consignment.",
+                        "type": "integer"
+                    },
+                    "sequence_number": {
+                        "description": "Sequence order number for the item.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ConsignmentProductBase": {
+                "type": "object",
+                "properties": {
+                    "consignment_id": {
+                        "description": "The ID of the consignment associated with this item.",
+                        "type": "string"
+                    },
+                    "product_id": {
+                        "description": "The ID of the product associated with this item.",
+                        "type": "string"
+                    },
+                    "count": {
+                        "description": "Quantity \"ordered\" for stock orders or \"expected\" for stock takes.",
+                        "type": "integer"
+                    },
+                    "received": {
+                        "description": "Quantity \"received\" for stock orders or \"counted\" for stock takes.",
+                        "type": "integer"
+                    },
+                    "cost": {
+                        "description": "Supply cost of the item for this consignment.",
+                        "type": "integer"
+                    },
+                    "sequence_number": {
+                        "description": "Sequence order number for the item.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ConsignmentProductCollection": {
+                "type": "object",
+                "properties": {
+                    "consignment_products": {
+                        "description": "An array of consignment product objects.",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "consignment_products": {
+                "type": "array"
+            },
+            "Customer": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "customer_group_name": {
+                        "description": "The name of the customer group this customer is associated with.",
+                        "type": "string"
+                    },
+                    "loyalty_balance": {
+                        "description": "Customer's current loyalty balance.",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp.",
+                        "type": "string"
+                    },
+                    "balance": {
+                        "description": "Customer's owing balance.",
+                        "type": "string"
+                    },
+                    "year_to_date": {
+                        "description": "Customer's total spending this year.",
+                        "type": "string"
+                    },
+                    "contact": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "customer_code": {
+                        "description": "Short, unique customer code.",
+                        "type": "string"
+                    },
+                    "customer_group_id": {
+                        "description": "The ID of the customer group this customer is associated with.",
+                        "type": "string"
+                    },
+                    "first_name": {
+                        "description": "Customer's first name.",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "Customer's last name.",
+                        "type": "string"
+                    },
+                    "company_name": {
+                        "description": "Customer's company name.",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "Customer's phone number.",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "Customer's mobile phone number.",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Customer's fax number.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Customer's email address.",
+                        "type": "string"
+                    },
+                    "twitter": {
+                        "description": "Twitter handle.",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website URL.",
+                        "type": "string"
+                    },
+                    "physical_address1": {
+                        "description": "Address, line 1 - physical.",
+                        "type": "string"
+                    },
+                    "physical_address2": {
+                        "description": "Address, line 2 - physical.",
+                        "type": "string"
+                    },
+                    "physical_suburb": {
+                        "description": "Suburb - physical.",
+                        "type": "string"
+                    },
+                    "physical_city": {
+                        "description": "City - physical.",
+                        "type": "string"
+                    },
+                    "physical_postcode": {
+                        "description": "Post code - physical.",
+                        "type": "string"
+                    },
+                    "physical_state": {
+                        "description": "State - physical.",
+                        "type": "string"
+                    },
+                    "physical_country_id": {
+                        "description": "Country code - physical.",
+                        "type": "string"
+                    },
+                    "postal_address1": {
+                        "description": "Address, line 1 - postal.",
+                        "type": "string"
+                    },
+                    "postal_address2": {
+                        "description": "Address, line 2 - postal.",
+                        "type": "string"
+                    },
+                    "postal_suburb": {
+                        "description": "Suburb - postal.",
+                        "type": "string"
+                    },
+                    "postal_city": {
+                        "description": "City - postal.",
+                        "type": "string"
+                    },
+                    "postal_postcode": {
+                        "description": "Post code - postal.",
+                        "type": "string"
+                    },
+                    "postal_state": {
+                        "description": "State - postal.",
+                        "type": "string"
+                    },
+                    "postal_country_id": {
+                        "description": "Country code - postal.",
+                        "type": "string"
+                    },
+                    "enable_loyalty": {
+                        "description": "Indicates whether customer's purchases should incur loyalty. `0` or `1`.",
+                        "type": "integer"
+                    },
+                    "date_of_birth": {
+                        "description": "Customer's date of birth.",
+                        "type": "string"
+                    },
+                    "sex": {
+                        "description": "Customer's gender.",
+                        "type": "string"
+                    },
+                    "custom_field_1": {
+                        "description": "Custom field 1, able to store any data as a string.",
+                        "type": "string"
+                    },
+                    "custom_field_2": {
+                        "description": "Custom field 2, able to store any data as a string.",
+                        "type": "string"
+                    },
+                    "custom_field_3": {
+                        "description": "Custom field 3, able to store any data as a string.",
+                        "type": "string"
+                    },
+                    "custom_field_4": {
+                        "description": "Custom field 4, able to store any data as a string.",
+                        "type": "string"
+                    },
+                    "note": {
+                        "description": "Customer related notes.",
+                        "type": "string"
+                    }
+                }
+            },
+            "contact": {
+                "type": "object"
+            },
+            "CustomerCollection": {
+                "type": "object",
+                "properties": {
+                    "customers": {
+                        "description": "An array of customer objects",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "customers": {
+                "type": "array"
+            },
+            "CustomerContact": {
+                "type": "object",
+                "properties": {
+                    "company_name": {
+                        "description": "Customer's company name.",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "Customer's phone number.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Customer's email address.",
+                        "type": "string"
+                    }
+                }
+            },
+            "CustomerResponse": {
+                "type": "object",
+                "properties": {
+                    "Customer": {
+                        "description": "Customer object",
+                        "type": "object"
+                    },
+                    "customer": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "CustomerUpdateBase": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "customer_code": {
+                        "description": "Short, unique customer code.",
+                        "type": "string"
+                    },
+                    "customer_group_id": {
+                        "description": "The ID of the customer group this customer is associated with.",
+                        "type": "string"
+                    },
+                    "first_name": {
+                        "description": "Customer's first name.",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "Customer's last name.",
+                        "type": "string"
+                    },
+                    "company_name": {
+                        "description": "Customer's company name.",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "Customer's phone number.",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "Customer's mobile phone number.",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Customer's fax number.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Customer's email address.",
+                        "type": "string"
+                    },
+                    "twitter": {
+                        "description": "Twitter handle.",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website URL.",
+                        "type": "string"
+                    },
+                    "physical_address1": {
+                        "description": "Address, line 1 - physical.",
+                        "type": "string"
+                    },
+                    "physical_address2": {
+                        "description": "Address, line 2 - physical.",
+                        "type": "string"
+                    },
+                    "physical_suburb": {
+                        "description": "Suburb - physical.",
+                        "type": "string"
+                    },
+                    "physical_city": {
+                        "description": "City - physical.",
+                        "type": "string"
+                    },
+                    "physical_postcode": {
+                        "description": "Post code - physical.",
+                        "type": "string"
+                    },
+                    "physical_state": {
+                        "description": "State - physical.",
+                        "type": "string"
+                    },
+                    "physical_country_id": {
+                        "description": "Country code - physical.",
+                        "type": "string"
+                    },
+                    "postal_address1": {
+                        "description": "Address, line 1 - postal.",
+                        "type": "string"
+                    },
+                    "postal_address2": {
+                        "description": "Address, line 2 - postal.",
+                        "type": "string"
+                    },
+                    "postal_suburb": {
+                        "description": "Suburb - postal.",
+                        "type": "string"
+                    },
+                    "postal_city": {
+                        "description": "City - postal.",
+                        "type": "string"
+                    },
+                    "postal_postcode": {
+                        "description": "Post code - postal.",
+                        "type": "string"
+                    },
+                    "postal_state": {
+                        "description": "State - postal.",
+                        "type": "string"
+                    },
+                    "postal_country_id": {
+                        "description": "Country code - postal.",
+                        "type": "string"
+                    },
+                    "enable_loyalty": {
+                        "description": "Indicates whether customer's purchases should incur loyalty. `0` or `1`.",
+                        "type": "integer"
+                    },
+                    "date_of_birth": {
+                        "description": "Customer's date of birth.",
+                        "type": "string"
+                    },
+                    "sex": {
+                        "description": "Customer's gender.",
+                        "type": "string"
+                    },
+                    "custom_field_1": {
+                        "description": "Custom field 1, able to store any data as a string.",
+                        "type": "string"
+                    },
+                    "custom_field_2": {
+                        "description": "Custom field 2, able to store any data as a string.",
+                        "type": "string"
+                    },
+                    "custom_field_3": {
+                        "description": "Custom field 3, able to store any data as a string.",
+                        "type": "string"
+                    },
+                    "custom_field_4": {
+                        "description": "Custom field 4, able to store any data as a string.",
+                        "type": "string"
+                    },
+                    "note": {
+                        "description": "Customer related notes.",
+                        "type": "string"
+                    }
+                }
+            },
+            "GenericContact": {
+                "type": "object",
+                "properties": {
+                    "first_name": {
+                        "description": "Customer's first name.",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "Customer's last name.",
+                        "type": "string"
+                    },
+                    "company_name": {
+                        "description": "Customer's company name.",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "Customer's phone number.",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "Customer's mobile phone number.",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Customer's fax number.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Customer's email address.",
+                        "type": "string"
+                    },
+                    "twitter": {
+                        "description": "Twitter handle.",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website URL.",
+                        "type": "string"
+                    },
+                    "physical_address1": {
+                        "description": "Address, line 1 - physical.",
+                        "type": "string"
+                    },
+                    "physical_address2": {
+                        "description": "Address, line 2 - physical.",
+                        "type": "string"
+                    },
+                    "physical_suburb": {
+                        "description": "Suburb - physical.",
+                        "type": "string"
+                    },
+                    "physical_city": {
+                        "description": "City - physical.",
+                        "type": "string"
+                    },
+                    "physical_postcode": {
+                        "description": "Post code - physical.",
+                        "type": "string"
+                    },
+                    "physical_state": {
+                        "description": "State - physical.",
+                        "type": "string"
+                    },
+                    "physical_country_id": {
+                        "description": "Country code - physical.",
+                        "type": "string"
+                    },
+                    "postal_address1": {
+                        "description": "Address, line 1 - postal.",
+                        "type": "string"
+                    },
+                    "postal_address2": {
+                        "description": "Address, line 2 - postal.",
+                        "type": "string"
+                    },
+                    "postal_suburb": {
+                        "description": "Suburb - postal.",
+                        "type": "string"
+                    },
+                    "postal_city": {
+                        "description": "City - postal.",
+                        "type": "string"
+                    },
+                    "postal_postcode": {
+                        "description": "Post code - postal.",
+                        "type": "string"
+                    },
+                    "postal_state": {
+                        "description": "State - postal.",
+                        "type": "string"
+                    },
+                    "postal_country_id": {
+                        "description": "Country code - postal.",
+                        "type": "string"
+                    }
+                }
+            },
+            "InventoryRecord": {
+                "type": "object",
+                "properties": {
+                    "outlet_id": {
+                        "description": "The ID of the outlet to which the goods are coming.",
+                        "type": "string"
+                    },
+                    "outlet_name": {
+                        "description": "The name of the outlet.",
+                        "type": "string"
+                    },
+                    "count": {
+                        "description": "Quantity \"ordered\" for stock orders or \"expected\" for stock takes.",
+                        "type": "integer"
+                    },
+                    "reorder_point": {
+                        "description": "Quantity below which the product should be included in the auto-filled stock orders.",
+                        "type": "integer"
+                    },
+                    "restock_level": {
+                        "description": "The default of the quantity for auto-filled stock orders",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Links": {
+                "type": "object",
+                "properties": {
+                    "original": {
+                        "description": "The URL of the product image in the original size (max 2000px).",
+                        "type": "string"
+                    },
+                    "standard": {
+                        "description": "The URL of the product image in the standard size.",
+                        "type": "string"
+                    },
+                    "thumb": {
+                        "description": "The URL of the product image in the thumbnail size.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Outlet": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "time_zone": {
+                        "description": "Outlet time-zone in **tz database** format like: `Pacific\/Auckland`.",
+                        "type": "string"
+                    },
+                    "tax_id": {
+                        "description": "The ID of the default tax for the outlet.",
+                        "type": "string"
+                    },
+                    "GenericContact": {
+                        "description": "Generic contact object embedded in other objects like outlet or supplier",
+                        "type": "object"
+                    },
+                    "contact": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "email": {
+                        "description": "Customer's email address.",
+                        "type": "string"
+                    },
+                    "physical_address1": {
+                        "description": "Address, line 1 - physical.",
+                        "type": "string"
+                    },
+                    "physical_address2": {
+                        "description": "Address, line 2 - physical.",
+                        "type": "string"
+                    },
+                    "physical_suburb": {
+                        "description": "Suburb - physical.",
+                        "type": "string"
+                    },
+                    "physical_city": {
+                        "description": "City - physical.",
+                        "type": "string"
+                    },
+                    "physical_postcode": {
+                        "description": "Post code - physical.",
+                        "type": "string"
+                    },
+                    "physical_state": {
+                        "description": "State - physical.",
+                        "type": "string"
+                    },
+                    "physical_country_id": {
+                        "description": "Country code - physical.",
+                        "type": "string"
+                    }
+                }
+            },
+            "OutletCollection": {
+                "type": "object",
+                "properties": {
+                    "outlets": {
+                        "description": "An array of outlet objects.",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "outlets": {
+                "type": "array"
+            },
+            "PaymentConfig": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "description": "The URL of an external gateway.",
+                        "type": "string"
+                    }
+                }
+            },
+            "PaymentType": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "payment_type_id": {
+                        "description": "**internal** The ID of the global payment type.",
+                        "type": "integer"
+                    },
+                    "PaymentConfig": {
+                        "description": "An object containing additional payment configuration attributes",
+                        "type": "object"
+                    },
+                    "config": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "PaymentTypeCollection": {
+                "type": "object",
+                "properties": {
+                    "payment_types": {
+                        "description": "An array of payment type objects",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "payment_types": {
+                "type": "array"
+            },
+            "PriceBookEntry": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "product_id": {
+                        "description": "The ID of the product associated with this item.",
+                        "type": "string"
+                    },
+                    "price_book_id": {
+                        "description": "ID of the price book associated with this record.",
+                        "type": "string"
+                    },
+                    "price_book_name": {
+                        "description": "The name of the price book associated with this record.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of the consignment. One of:  `SUPPLIER`, `OUTLET`, `STOCKTAKE`.",
+                        "type": "string"
+                    },
+                    "outlet_name": {
+                        "description": "The name of the outlet.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "The ID of the outlet to which the goods are coming.",
+                        "type": "string"
+                    },
+                    "customer_group_name": {
+                        "description": "The name of the customer group this customer is associated with.",
+                        "type": "string"
+                    },
+                    "customer_group_id": {
+                        "description": "The ID of the customer group this customer is associated with.",
+                        "type": "string"
+                    },
+                    "price": {
+                        "description": "Tax exclusive price of the product.",
+                        "type": "number"
+                    },
+                    "loyalty_value": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "tax": {
+                        "description": "The tax value.",
+                        "type": "number"
+                    },
+                    "tax_id": {
+                        "description": "The ID of the default tax for the outlet.",
+                        "type": "string"
+                    },
+                    "tax_rate": {
+                        "description": "The tax rate.",
+                        "type": "number"
+                    },
+                    "tax_name": {
+                        "description": "The name of the tax associated with this record.",
+                        "type": "string"
+                    },
+                    "min_units": {
+                        "description": "Minimum product quantity for which this price book entry will be used.",
+                        "type": "string"
+                    },
+                    "max_units": {
+                        "description": "Maximum product quantity for which this price book entry will be used.",
+                        "type": "string"
+                    },
+                    "valid_from": {
+                        "description": "The staring date from which this price book entry is in effect.",
+                        "type": "string"
+                    },
+                    "valid_to": {
+                        "description": "The end date to which this price book entry is in effect.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Product": {
+                "type": "object",
+                "properties": {
+                    "has_variants": {
+                        "description": "Indicated whether the product has variants.",
+                        "type": "boolean"
+                    },
+                    "variant_parent_id": {
+                        "description": "The ID of the parent product. Only available of variant children.",
+                        "type": "string"
+                    },
+                    "base_name": {
+                        "description": "The root of the product's name as defined by the user in the UI. Doesn't include any variant related suffixes.",
+                        "type": "string"
+                    },
+                    "image": {
+                        "description": "**DEPRECATED** URL of the product image.",
+                        "type": "string"
+                    },
+                    "image_large": {
+                        "description": "**DEPRECATED** URL of the large product image.",
+                        "type": "string"
+                    },
+                    "images": {
+                        "description": "An array of product images.",
+                        "type": "array"
+                    },
+                    "price_book_entries": {
+                        "description": "An array of price book entries associated with the product.",
+                        "type": "array"
+                    },
+                    "price": {
+                        "description": "Tax exclusive price of the product.",
+                        "type": "number"
+                    },
+                    "tax": {
+                        "description": "The tax value.",
+                        "type": "number"
+                    },
+                    "tax_rate": {
+                        "description": "The tax rate.",
+                        "type": "number"
+                    },
+                    "tax_name": {
+                        "description": "The name of the tax associated with this record.",
+                        "type": "string"
+                    },
+                    "taxes": {
+                        "description": "An array of product tax objects.",
+                        "type": "array"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "source_id": {
+                        "description": "The ID that can be used to reference a product in another system.",
+                        "type": "string"
+                    },
+                    "variant_source_id": {
+                        "description": "Reference ID to an external object. Should be POSTed as `source_variant_id`.",
+                        "type": "string"
+                    },
+                    "handle": {
+                        "description": "The handle of the product. Creating a new product with a handle identical to one of an existing product will cause creating a variant.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of the consignment. One of:  `SUPPLIER`, `OUTLET`, `STOCKTAKE`.",
+                        "type": "string"
+                    },
+                    "variant_option_one_name": {
+                        "description": "The name of the variant option 1.",
+                        "type": "string"
+                    },
+                    "variant_option_one_value": {
+                        "description": "The value of the variant option 1.",
+                        "type": "string"
+                    },
+                    "variant_option_two_name": {
+                        "description": "The name of the variant option 2.",
+                        "type": "string"
+                    },
+                    "variant_option_two_value": {
+                        "description": "The value of the variant option 2.",
+                        "type": "string"
+                    },
+                    "variant_option_three_name": {
+                        "description": "The name of the variant option 3.",
+                        "type": "string"
+                    },
+                    "variant_option_three_value": {
+                        "description": "The value of the variant option 3.",
+                        "type": "string"
+                    },
+                    "active": {
+                        "description": "Indicates whether the product is currently active.",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "The description of the product. May include HTML.",
+                        "type": "string"
+                    },
+                    "sku": {
+                        "description": "The SKU of the product. Should be unique for new products.",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "A comma separated list of tags associated with the product.",
+                        "type": "string"
+                    },
+                    "brand_id": {
+                        "description": "The ID of the brand associated with the product.",
+                        "type": "string"
+                    },
+                    "supplier_name": {
+                        "description": "Product supplier's name.",
+                        "type": "string"
+                    },
+                    "supplier_code": {
+                        "description": "The code of the supplier for the product.",
+                        "type": "string"
+                    },
+                    "supply_price": {
+                        "description": "The default cost of supply for the product.",
+                        "type": "string"
+                    },
+                    "account_code_purchase": {
+                        "description": "Code used to associate purchase (cost) of the product with a specific account.",
+                        "type": "string"
+                    },
+                    "account_code_sales": {
+                        "description": "Code used to associate sales of the product with a specific account. When POSTing it should be delivered as `account_code`.",
+                        "type": "string"
+                    },
+                    "track_inventory": {
+                        "description": "Indicated whether the system should track inventory count for this product.",
+                        "type": "boolean"
+                    },
+                    "button_order": {
+                        "description": "A number describing the position of a variant in the UI.",
+                        "type": "integer"
+                    },
+                    "inventory": {
+                        "description": "A list of inventory records associated with the product.",
+                        "type": "array"
+                    },
+                    "retail_price": {
+                        "description": "Retail price for the product. Tax inclusive or exclusive depending on the store settings.",
+                        "type": "number"
+                    },
+                    "tax_id": {
+                        "description": "The ID of the default tax for the outlet.",
+                        "type": "string"
+                    }
+                }
+            },
+            "images": {
+                "type": "array"
+            },
+            "price_book_entries": {
+                "type": "array"
+            },
+            "taxes": {
+                "type": "array"
+            },
+            "inventory": {
+                "type": "array"
+            },
+            "ProductCollection": {
+                "type": "object",
+                "properties": {
+                    "products": {
+                        "description": "An array of products.",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "products": {
+                "type": "array"
+            },
+            "ProductImage": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "Links": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ProductResponse": {
+                "type": "object",
+                "properties": {
+                    "Product": {
+                        "description": "Product object",
+                        "type": "object"
+                    },
+                    "product": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ProductTax": {
+                "type": "object",
+                "properties": {
+                    "outlet_id": {
+                        "description": "The ID of the outlet to which the goods are coming.",
+                        "type": "string"
+                    },
+                    "tax_id": {
+                        "description": "The ID of the default tax for the outlet.",
+                        "type": "string"
+                    }
+                }
+            },
+            "ProductUpdateBase": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "source_id": {
+                        "description": "The ID that can be used to reference a product in another system.",
+                        "type": "string"
+                    },
+                    "source_variant_id": {
+                        "description": "Reference ID to an external object. Value will be returned as `variant_source_id`.",
+                        "type": "string"
+                    },
+                    "handle": {
+                        "description": "The handle of the product. Creating a new product with a handle identical to one of an existing product will cause creating a variant.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of the consignment. One of:  `SUPPLIER`, `OUTLET`, `STOCKTAKE`.",
+                        "type": "string"
+                    },
+                    "variant_option_one_name": {
+                        "description": "The name of the variant option 1.",
+                        "type": "string"
+                    },
+                    "variant_option_one_value": {
+                        "description": "The value of the variant option 1.",
+                        "type": "string"
+                    },
+                    "variant_option_two_name": {
+                        "description": "The name of the variant option 2.",
+                        "type": "string"
+                    },
+                    "variant_option_two_value": {
+                        "description": "The value of the variant option 2.",
+                        "type": "string"
+                    },
+                    "variant_option_three_name": {
+                        "description": "The name of the variant option 3.",
+                        "type": "string"
+                    },
+                    "variant_option_three_value": {
+                        "description": "The value of the variant option 3.",
+                        "type": "string"
+                    },
+                    "active": {
+                        "description": "Indicates whether the product is currently active.\n**NOTE:** Currently has to be submitted as __\"0\"__ or __\"1\"__. Will be returned as __boolean__ value of `true` or `false`.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "The description of the product. May include HTML.",
+                        "type": "string"
+                    },
+                    "sku": {
+                        "description": "The SKU of the product. Should be unique for new products.",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "A comma separated list of tags associated with the product.",
+                        "type": "string"
+                    },
+                    "brand_name": {
+                        "description": "The name of the brand associated with the product.",
+                        "type": "string"
+                    },
+                    "supplier_name": {
+                        "description": "Product supplier's name.",
+                        "type": "string"
+                    },
+                    "supplier_code": {
+                        "description": "The code of the supplier for the product.",
+                        "type": "string"
+                    },
+                    "supply_price": {
+                        "description": "The default cost of supply for the product.",
+                        "type": "string"
+                    },
+                    "account_code_purchase": {
+                        "description": "Code used to associate purchase (cost) of the product with a specific account.",
+                        "type": "string"
+                    },
+                    "account_code": {
+                        "description": "Code used to associate sales of the product with a specific account. Value will be returned as `account_code_sales`.",
+                        "type": "string"
+                    },
+                    "track_inventory": {
+                        "description": "Indicated whether the system should track inventory count for this product.",
+                        "type": "boolean"
+                    },
+                    "button_order": {
+                        "description": "A number describing the position of a variant in the UI.",
+                        "type": "integer"
+                    },
+                    "inventory": {
+                        "description": "A list of inventory records associated with the product.",
+                        "type": "array"
+                    },
+                    "retail_price": {
+                        "description": "Retail price for the product. Tax inclusive or exclusive depending on the store settings.",
+                        "type": "number"
+                    },
+                    "tax_id": {
+                        "description": "The ID of the default tax for the outlet.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Rate": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "rate": {
+                        "description": "The value of the tax rate. `0.1 = 10%` tax.",
+                        "type": "number"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Register": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "The ID of the outlet to which the goods are coming.",
+                        "type": "string"
+                    },
+                    "button_layout_id": {
+                        "description": "**internal** The ID of the button layout associated with this register.",
+                        "type": "string"
+                    },
+                    "print_receipt": {
+                        "description": "Indicates whether the receipt will be printed after the sale is completed. `\"0\"` or `\"1\"`.",
+                        "type": "string"
+                    },
+                    "email_receipt": {
+                        "description": "Indicated whether the receipt should be emailed after the sale is completed.  `\"0\"` or `\"1\"`.",
+                        "type": "string"
+                    },
+                    "ask_for_note_on_save": {
+                        "description": "Indicates whether the user will be asked to enter a note when saving a sale.  `\"0\"` or `\"1\"`.",
+                        "type": "string"
+                    },
+                    "print_note_on_receipt": {
+                        "description": "Indicates whether the sale note should be printed on the receipt.  `\"0\"` or `\"1\"`.",
+                        "type": "string"
+                    },
+                    "ask_for_user_on_sale": {
+                        "description": "Indicated whether the user prompt should appear after the sale. `\"0\"` or `\"1\"`.",
+                        "type": "string"
+                    },
+                    "show_discounts_on_receipt": {
+                        "description": "Indicates whether discounts values should appear on the receipt. `\"0\"` or `\"1\"`.",
+                        "type": "string"
+                    },
+                    "receipt_header": {
+                        "description": "Content of the receipt header. May contain HTML.",
+                        "type": "string"
+                    },
+                    "receipt_barcoded": {
+                        "description": "Indicates whether the barcode should be printed on the receipt. `\"0\"` or `\"1\"`.",
+                        "type": "string"
+                    },
+                    "receipt_footer": {
+                        "description": "Content of the receipt footer. May contain HTML.",
+                        "type": "string"
+                    },
+                    "receipt_style_class": {
+                        "description": "**internal**",
+                        "type": "string"
+                    },
+                    "invoice_prefix": {
+                        "description": "Text to be used as prefix of the invoice number.",
+                        "type": "string"
+                    },
+                    "invoice_suffix": {
+                        "description": "Text to be used as suffix of the invoice number.",
+                        "type": "string"
+                    },
+                    "invoice_sequence": {
+                        "description": "The numeric part of the last created invoice number.",
+                        "type": "integer"
+                    },
+                    "register_open_count_sequence": {
+                        "description": "**internal** The number of the current register closure.",
+                        "type": "string"
+                    },
+                    "register_open_sequence_id": {
+                        "description": "**internal** The ID of the current register closure.",
+                        "type": "string"
+                    },
+                    "register_open_time": {
+                        "description": "The time when the register was opened.",
+                        "type": "string"
+                    },
+                    "register_close_time": {
+                        "description": "Time time when the register was closed. May be blank if the register is currently open.",
+                        "type": "string"
+                    },
+                    "cash_managed_payment_type_id": {
+                        "description": "**internal** The ID of the payment type used for cash management functionality.",
+                        "type": "string"
+                    },
+                    "is_quick_keys_enabled": {
+                        "description": "**internal** Indicated whether the register is using quick keys.",
+                        "type": "boolean"
+                    },
+                    "quick_key_template_id": {
+                        "description": "**internal** The ID of the quick keys template the register is using.",
+                        "type": "string"
+                    }
+                }
+            },
+            "RegisterCollection": {
+                "type": "object",
+                "properties": {
+                    "registers": {
+                        "description": "An array of register objects.",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "registers": {
+                "type": "array"
+            },
+            "RegisterSale": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "**internal** One of `USER` and `SHOPIFY`.",
+                        "type": "string"
+                    },
+                    "customer_name": {
+                        "description": "The name of the customer associated with the sale.",
+                        "type": "string"
+                    },
+                    "Customer": {
+                        "description": "Customer object",
+                        "type": "object"
+                    },
+                    "customer": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "user_name": {
+                        "description": "The username of the user who created the sale.",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "The date and time when the sale was created (on the server).",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp.",
+                        "type": "string"
+                    },
+                    "total_price": {
+                        "description": "Total price of the sale.",
+                        "type": "integer"
+                    },
+                    "total_cost": {
+                        "description": "Total cost of the sale.",
+                        "type": "number"
+                    },
+                    "total_tax": {
+                        "description": "Total tax of the sale.",
+                        "type": "number"
+                    },
+                    "tax_name": {
+                        "description": "The name of the tax associated with this record.",
+                        "type": "string"
+                    },
+                    "return_for": {
+                        "description": "The ID of another sale if this sale was created as a return.",
+                        "type": "string"
+                    },
+                    "source_id": {
+                        "description": "The ID that can be used to reference a product in another system.",
+                        "type": "string"
+                    },
+                    "register_id": {
+                        "description": "The ID of the register where the sale was created.",
+                        "type": "string"
+                    },
+                    "customer_id": {
+                        "description": "The ID of the customer associated with this sale.",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The ID of the user (cashier) who created the sale.",
+                        "type": "string"
+                    },
+                    "sale_date": {
+                        "description": "The date of the sale. If not provided will be added as the time the sale reached the server.",
+                        "type": "string"
+                    },
+                    "note": {
+                        "description": "Customer related notes.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of the consignment. One of: `OPEN`, `SENT`, `RECEIVED`, `CANCELLED`,  `STOCKTAKE`, `STOCKTAKE_COMPLETE`.",
+                        "type": "string"
+                    },
+                    "short_code": {
+                        "description": "Short, unique code to be printed on the receipt for loyalty tracking purposes.",
+                        "type": "string"
+                    },
+                    "invoice_number": {
+                        "description": "The invoice number for the sale. If left null it will be populated by Vend with the next available invoice number.",
+                        "type": "string"
+                    },
+                    "accounts_transaction_id": {
+                        "description": "The ID of a transaction in an external system associated with this consignment.",
+                        "type": "string"
+                    },
+                    "register_sale_products": {
+                        "description": "Line items.",
+                        "type": "array"
+                    },
+                    "register_sale_payments": {
+                        "description": "Payments.",
+                        "type": "array"
+                    },
+                    "totals": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "taxes": {
+                        "description": "An array of product tax objects.",
+                        "type": "array"
+                    }
+                }
+            },
+            "register_sale_products": {
+                "type": "array"
+            },
+            "register_sale_payments": {
+                "type": "array"
+            },
+            "totals": {
+                "type": "object"
+            },
+            "RegisterSaleCollection": {
+                "type": "object",
+                "properties": {
+                    "register_sales": {
+                        "description": "An array of register sale objects.",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "register_sales": {
+                "type": "array"
+            },
+            "RegisterSalePayment": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "register_id": {
+                        "description": "The ID of the register where the sale was created.",
+                        "type": "string"
+                    },
+                    "retailer_payment_type_id": {
+                        "description": "Payment type id to be used for the payment.",
+                        "type": "string"
+                    },
+                    "payment_date": {
+                        "description": "The date and time of the payment.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "Payment amount.",
+                        "type": "number"
+                    },
+                    "payment_type_id": {
+                        "description": "**internal** Global payment type ID. Irrelevant for external use.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "label": {
+                        "description": "The label of the payment type.",
+                        "type": "string"
+                    }
+                }
+            },
+            "RegisterSalePaymentUpdateBase": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "register_id": {
+                        "description": "The ID of the register where the sale was created.",
+                        "type": "string"
+                    },
+                    "retailer_payment_type_id": {
+                        "description": "Payment type id to be used for the payment.",
+                        "type": "string"
+                    },
+                    "payment_date": {
+                        "description": "The date and time of the payment.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "Payment amount.",
+                        "type": "number"
+                    }
+                }
+            },
+            "RegisterSaleProduct": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "handle": {
+                        "description": "The handle of the product. Creating a new product with a handle identical to one of an existing product will cause creating a variant.",
+                        "type": "string"
+                    },
+                    "sku": {
+                        "description": "The SKU of the product. Should be unique for new products.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "tax_name": {
+                        "description": "The name of the tax associated with this record.",
+                        "type": "string"
+                    },
+                    "tax_rate": {
+                        "description": "The tax rate.",
+                        "type": "number"
+                    },
+                    "tax_total": {
+                        "description": "Total tax for this line item. (`tax * quantity`).",
+                        "type": "number"
+                    },
+                    "price_total": {
+                        "description": "Total price for this line item. (`price * quantity`).",
+                        "type": "number"
+                    },
+                    "product_id": {
+                        "description": "The ID of the product associated with this item.",
+                        "type": "string"
+                    },
+                    "register_id": {
+                        "description": "The ID of the register where the sale was created.",
+                        "type": "string"
+                    },
+                    "sequence": {
+                        "description": "Order number of the line item.",
+                        "type": "integer"
+                    },
+                    "quantity": {
+                        "description": "Quantity of products for the line item.",
+                        "type": "number"
+                    },
+                    "price": {
+                        "description": "Tax exclusive price of the product.",
+                        "type": "number"
+                    },
+                    "cost": {
+                        "description": "Unit cost of the line item",
+                        "type": "number"
+                    },
+                    "price_set": {
+                        "description": "Indicated whether the price was \"fixed\". If set to `\"1\"` it prevents recalculation of the total price based on the price from the database. One of `\"0\"` or `\"1\"`.",
+                        "type": "integer"
+                    },
+                    "discount": {
+                        "description": "Discount value of the line item.",
+                        "type": "integer"
+                    },
+                    "loyalty_value": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "tax": {
+                        "description": "The tax value.",
+                        "type": "number"
+                    },
+                    "tax_id": {
+                        "description": "The ID of the default tax for the outlet.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of the consignment. One of: `OPEN`, `SENT`, `RECEIVED`, `CANCELLED`,  `STOCKTAKE`, `STOCKTAKE_COMPLETE`.",
+                        "type": "string"
+                    },
+                    "attributes": {
+                        "description": "Additional line item attributes.",
+                        "type": "array"
+                    }
+                }
+            },
+            "attributes": {
+                "type": "array"
+            },
+            "RegisterSaleProductAttribute": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "Attribute value.",
+                        "type": "string"
+                    }
+                }
+            },
+            "RegisterSaleProductUpdateBase": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "product_id": {
+                        "description": "The ID of the product associated with this item.",
+                        "type": "string"
+                    },
+                    "register_id": {
+                        "description": "The ID of the register where the sale was created.",
+                        "type": "string"
+                    },
+                    "sequence": {
+                        "description": "Order number of the line item.",
+                        "type": "integer"
+                    },
+                    "quantity": {
+                        "description": "Quantity of products for the line item.",
+                        "type": "number"
+                    },
+                    "price": {
+                        "description": "Tax exclusive price of the product.",
+                        "type": "number"
+                    },
+                    "cost": {
+                        "description": "Unit cost of the line item",
+                        "type": "number"
+                    },
+                    "price_set": {
+                        "description": "Indicated whether the price was \"fixed\". If set to `\"1\"` it prevents recalculation of the total price based on the price from the database. One of `\"0\"` or `\"1\"`.",
+                        "type": "integer"
+                    },
+                    "discount": {
+                        "description": "Discount value of the line item.",
+                        "type": "integer"
+                    },
+                    "loyalty_value": {
+                        "description": "",
+                        "type": "number"
+                    },
+                    "tax": {
+                        "description": "The tax value.",
+                        "type": "number"
+                    },
+                    "tax_id": {
+                        "description": "The ID of the default tax for the outlet.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of the consignment. One of: `OPEN`, `SENT`, `RECEIVED`, `CANCELLED`,  `STOCKTAKE`, `STOCKTAKE_COMPLETE`.",
+                        "type": "string"
+                    },
+                    "attributes": {
+                        "description": "Additional line item attributes.",
+                        "type": "array"
+                    }
+                }
+            },
+            "RegisterSaleResponse": {
+                "type": "object",
+                "properties": {
+                    "RegisterSale": {
+                        "description": "Register sale object",
+                        "type": "object"
+                    },
+                    "register_sale": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "RegisterSaleTax": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "tax": {
+                        "description": "The tax value.",
+                        "type": "number"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "rate": {
+                        "description": "The value of the tax rate. `0.1 = 10%` tax.",
+                        "type": "number"
+                    }
+                }
+            },
+            "RegisterSaleTotals": {
+                "type": "object",
+                "properties": {
+                    "total_tax": {
+                        "description": "Total tax of the sale.",
+                        "type": "number"
+                    },
+                    "total_price": {
+                        "description": "Total price of the sale.",
+                        "type": "integer"
+                    },
+                    "total_payment": {
+                        "description": "Total payment value for the sale.",
+                        "type": "number"
+                    },
+                    "total_to_pay": {
+                        "description": "Total outstanding payment value.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "RegisterSaleUpdateBase": {
+                "type": "object",
+                "properties": {
+                    "source_id": {
+                        "description": "The ID that can be used to reference a product in another system.",
+                        "type": "string"
+                    },
+                    "register_id": {
+                        "description": "The ID of the register where the sale was created.",
+                        "type": "string"
+                    },
+                    "customer_id": {
+                        "description": "The ID of the customer associated with this sale.",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The ID of the user (cashier) who created the sale.",
+                        "type": "string"
+                    },
+                    "sale_date": {
+                        "description": "The date of the sale. If not provided will be added as the time the sale reached the server.",
+                        "type": "string"
+                    },
+                    "note": {
+                        "description": "Customer related notes.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of the consignment. One of: `OPEN`, `SENT`, `RECEIVED`, `CANCELLED`,  `STOCKTAKE`, `STOCKTAKE_COMPLETE`.",
+                        "type": "string"
+                    },
+                    "short_code": {
+                        "description": "Short, unique code to be printed on the receipt for loyalty tracking purposes.",
+                        "type": "string"
+                    },
+                    "invoice_number": {
+                        "description": "The invoice number for the sale. If left null it will be populated by Vend with the next available invoice number.",
+                        "type": "string"
+                    },
+                    "accounts_transaction_id": {
+                        "description": "The ID of a transaction in an external system associated with this consignment.",
+                        "type": "string"
+                    },
+                    "register_sale_products": {
+                        "description": "Line items.",
+                        "type": "array"
+                    },
+                    "register_sale_payments": {
+                        "description": "Payments.",
+                        "type": "array"
+                    }
+                }
+            },
+            "Supplier": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "**internal** One of `USER` and `SHOPIFY`.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "The description of the product. May include HTML.",
+                        "type": "string"
+                    },
+                    "GenericContact": {
+                        "description": "Generic contact object embedded in other objects like outlet or supplier",
+                        "type": "object"
+                    },
+                    "contact": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "SupplierCollection": {
+                "type": "object",
+                "properties": {
+                    "suppliers": {
+                        "description": "An array of supplier objects.",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "suppliers": {
+                "type": "array"
+            },
+            "SupplierUpdateBase": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "The description of the product. May include HTML.",
+                        "type": "string"
+                    },
+                    "GenericContact": {
+                        "description": "Generic contact object embedded in other objects like outlet or supplier",
+                        "type": "object"
+                    },
+                    "contact": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "Tax": {
+                "type": "object",
+                "properties": {
+                    "default": {
+                        "description": "Indicates whether the tax is the default tax for the account.",
+                        "type": "boolean"
+                    },
+                    "active": {
+                        "description": "Indicates whether the product is currently active.",
+                        "type": "boolean"
+                    },
+                    "rates": {
+                        "description": "Tax rates associated with the tax. Always a single rate for tax-inclusive stores.",
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "rate": {
+                        "description": "The value of the tax rate. `0.1 = 10%` tax.",
+                        "type": "number"
+                    }
+                }
+            },
+            "rates": {
+                "type": "array"
+            },
+            "TaxBase": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "rate": {
+                        "description": "The value of the tax rate. `0.1 = 10%` tax.",
+                        "type": "number"
+                    }
+                }
+            },
+            "TaxCollection": {
+                "type": "object",
+                "properties": {
+                    "taxes": {
+                        "description": "An array of product tax objects.",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "TaxResponse": {
+                "type": "object",
+                "properties": {
+                    "Tax": {
+                        "description": "Tax object",
+                        "type": "object"
+                    },
+                    "tax": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "The username used to log into Vend.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the consignment.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Customer's email address.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "The ID of the outlet to which the goods are coming.",
+                        "type": "string"
+                    },
+                    "outlet_name": {
+                        "description": "The name of the outlet.",
+                        "type": "string"
+                    },
+                    "outlet_ids": {
+                        "description": "An array of outlet IDs that the user is assigned to",
+                        "type": "array"
+                    },
+                    "account_type": {
+                        "description": "User's assigned role",
+                        "type": "string"
+                    },
+                    "image": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "outlet_ids": {
+                "type": "array"
+            },
+            "image": {
+                "type": "object"
+            },
+            "UserCollection": {
+                "type": "object",
+                "properties": {
+                    "users": {
+                        "description": "An array of user objects.",
+                        "type": "array"
+                    },
+                    "pagination": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "users": {
+                "type": "array"
+            },
+            "UserImage": {
+                "type": "object",
+                "properties": {
+                    "sl": {
+                        "description": "The URL of the image.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Webhook": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID",
+                        "type": "string"
+                    },
+                    "retailer_id": {
+                        "description": "The ID of the retailer associated with this consignment.",
+                        "type": "string"
+                    },
+                    "active": {
+                        "description": "Indicates whether the product is currently active.",
+                        "type": "boolean"
+                    },
+                    "type": {
+                        "description": "The type of the consignment. One of:  `SUPPLIER`, `OUTLET`, `STOCKTAKE`.",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "The URL of an external gateway.",
+                        "type": "string"
+                    }
+                }
+            },
+            "WebhookDeleteSuccess": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "Status of the consignment. One of: `OPEN`, `SENT`, `RECEIVED`, `CANCELLED`,  `STOCKTAKE`, `STOCKTAKE_COMPLETE`.",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
