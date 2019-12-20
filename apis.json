@@ -1,0 +1,110 @@
+{
+    "name": "Vend Point-of-Sale",
+    "description": "<p>Vend is web-based point-of-sale and retail management software. Vend allows real-world retail store owners or managers to have full visibility and centralized control of one to many retail stores<\/p>",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/vend-logo.png",
+    "tags": [
+        "have api",
+        "have swagger",
+        "point of sale",
+        "webhook implementations"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/vend-pointofsale\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "API 0.9",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/vend-logo.png",
+            "humanURL": "https:\/\/www.vendhq.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/api-0-9-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/api-0-9.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/api-0-9-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "API 2.0",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/vend-logo.png",
+            "humanURL": "https:\/\/www.vendhq.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/api-2-0-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/api-2-0.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/api-2-0-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "Vend Point-of-Sale",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/vend-logo.png",
+            "humanURL": "https:\/\/www.vendhq.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/vend-pointofsale-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/vend-pointofsale.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/vend-pointofsale-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/blog.vendhq.com\/"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/18958-2019-09-03-22-19-29.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/18958-2019-09-03-22-20-43.json"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/vendhq"
+        },
+        {
+            "type": "Webhooks",
+            "url": "https:\/\/docs.vendhq.com\/docs\/webhooks"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.vendhq.com\/"
+        }
+    ]
+}
