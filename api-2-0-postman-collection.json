@@ -1,0 +1,1816 @@
+{
+    "id": "2b5f82a0a9d28c3d665a7185fbb39a35",
+    "name": "API 2.0",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "aee7fbbe1957e0e4f3e16286d4b43033",
+            "name": "List brands",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/brands",
+            "description": "Returns a paginated list of brands.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "a44eae443f00d6d6916cd94e18d5c527",
+            "name": "Get a single brand",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/brands\/{brand_id}",
+            "description": "Returns a single brand with a requested ID",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "brand_id",
+                    "description": "Valid brand ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "0c46f537e2abe2815435b8b9ce0de4d0",
+            "name": "List consignments",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments",
+            "description": "Returns a paginated list of consignments.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "outlet_id",
+                    "description": "The ID of the outlet which the consignment is targeted at.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "type",
+                    "description": "The type of consignments to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "status",
+                    "description": "The status of consignments to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "bd78d5f4bc4b53240fccbf12fc9e25b7",
+            "name": "Create an inventory count",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments",
+            "description": "Creates a new consignment of type `STOCKTAKE`. Currently, this endpoint only supports creation of inventory counts (stock takes).",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "68762ba08aaf0ed09d4ffe48efdc2f80",
+            "name": "List request records",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/channel_requests",
+            "description": "Returns a list of request log records.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "status_code",
+                    "description": "Limit the requests to 1 or more status codes.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "request_method",
+                    "description": "Limit the requests to 1 or more request methods.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "occurred_before",
+                    "description": "Limit requests to before this RFC3339 date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "occurred_after",
+                    "description": "Limit requests to after this RFC3339 date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "status_code_before",
+                    "description": "Limit requests to those with status codes less than this value.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "status_code_after",
+                    "description": "Limit requests to those with status codes greater than this value.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "channel_id",
+                    "description": "If provided, request logs will be limited to the supplied channel id. If no id is provided, only requests logged with no channel id will be returned. Requests with no channel id indicate requests made during the setup process.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "402031b2c2f411a72c955cac4e53d5bb",
+            "name": "Get a single request log",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/channel_requests\/{request_log_id}",
+            "description": "Returns a single request log entry with a specific ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "request_log_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "19624ecc2c4f2fc77ec3c8e039ef3f8c",
+            "name": "Get a single request log as text",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/channel_requests\/{request_log_id}.txt",
+            "description": "Returns a text representation of a single request log entry with a specific ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "request_log_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "72c8f5c6dbe6dbeb463542f8f499aa2b",
+            "name": "List channel records",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/channels",
+            "description": "Returns a list of configured channels.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "984cc6181340994d85c8496e53391664",
+            "name": "Get a single consignment",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}",
+            "description": "Returns a single consignment with the requested ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "Valid consignment ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "fb590714d2b2d043808247dd08656fba",
+            "name": "Update an inventory count",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}",
+            "description": "Updates the inventory count with requested ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "Valid consignment ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "2324d99fdbc89e4f9237e1bc95944e75",
+            "name": "Delete a consignment",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}",
+            "description": "Deletes the consignment with the given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "Valid consignment ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "8ba7e525b91caa7650ef1631512d8891",
+            "name": "List all products for a specific consignment",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}\/products",
+            "description": "Returns a collection of consignment products associated with the specified consignment.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "Valid consignment ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "99858c137363919b513247a8920da1db",
+            "name": "Adjust the inventory item count",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}\/products",
+            "description": "Increases or decreases the count for a specific product within the inventory count.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "Valid consignment ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "17f9636486ecbf873a2f187f610a5573",
+            "name": "Delete an item from an inventory count",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}\/products\/{product_id}",
+            "description": "Removes the count for a specific product from the inventory count.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "Valid consignment ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "product_id",
+                    "description": "The ID of a product included in the inventory count",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "18866ae27730a0796bca987f6b7129fc",
+            "name": "List customer groups",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customer_groups",
+            "description": "Returns a paginated list of customer groups.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "cc833308fc8a97bf7c87404b2fe63705",
+            "name": "List customers",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers",
+            "description": "Returns a paginated list of customers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "e5e304818c915960a42ea20819bccf69",
+            "name": "Create a new customer",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers",
+            "description": "Creates a new customer.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "cada77913d61802e65f0c16ad20fe4a5",
+            "name": "Get a single customer",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers\/{customer_id}",
+            "description": "Returns a single customer with a requested ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "customer_id",
+                    "description": "Valid customer ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "7ad39f6127ce889b29b32bc189e7476a",
+            "name": "Update a customer",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers\/{customer_id}",
+            "description": "Updates the customer with the requested ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "customer_id",
+                    "description": "Valid customer ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "cded60ae9aad4781035b4f3ca1017177",
+            "name": "Delete a customer",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers\/{customer_id}",
+            "description": "Deletes the customer with the requested ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "customer_id",
+                    "description": "Valid customer ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "089ab1c176088105c64a754e3396be44",
+            "name": "List inventory records",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/inventory",
+            "description": "Returns a paginated list of inventory records.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "dac93dee98057cf3faeb9873f95fe7cd",
+            "name": "List outlet product taxes",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/outlet_taxes",
+            "description": "Returns a paginated list of outlet-product-tax records.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "outlet_id",
+                    "description": "The ID of the outlet which the consignment is targeted at.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "fc34d2a580f8feb2ec411c3ec1c57dda",
+            "name": "List outlets",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/outlets",
+            "description": "Returns a collection of outlets.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "1fc1ff4fe6ac14a6c20d94b99d7a81c2",
+            "name": "Get a single outlet",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/outlets\/{outlet_id}",
+            "description": "Returns a single outlet with the requested ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "outlet_id",
+                    "description": "Valid Outlet ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "23593014d9040143369f5a1c3ce13ed3",
+            "name": "List payment types",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/payment_types",
+            "description": "Returns a paginated collection of payment types.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "0ad0aa75aeaf54162b99a90ed31920d4",
+            "name": "List price book products",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/price_book_products",
+            "description": "Returns a paginated list of price book products.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "0d12d136201124092146d5df2febeeda",
+            "name": "List price books",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/price_books",
+            "description": "Returns a paginated list of price books",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "2b3355ba12e852edce6b414c6ba52a8b",
+            "name": "Get a single price book",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/price_books\/{price_book_id}",
+            "description": "Returns a single price book with a requested ID",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "price_book_id",
+                    "description": "Valid price book ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "0e00294c7b69ddf1f14bb535c2bfa036",
+            "name": "Get a single product_image data",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_images\/{product_image_id}",
+            "description": "Returns the metadata for a single product image with a given ID.\nThis method is useful for checking the status of an image after it was uploaded.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_image_id",
+                    "description": "Valid product ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "ff9916f5bf5afd673e3125c3f09c2449",
+            "name": "Set image position",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_images\/{product_image_id}",
+            "description": "Allows for changing the image position in the list",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_image_id",
+                    "description": "Valid product ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "5b885c80a92c8d7c033527fadac6af2c",
+            "name": "Delete a product_image",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_images\/{product_image_id}",
+            "description": "Deletes the product_image with the requested ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_image_id",
+                    "description": "Valid product ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "7adca721857f67fc8e1d5916c339e4aa",
+            "name": "List product types",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_types",
+            "description": "Returns a paginated list of product types.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "ae060eeb75f3166c94b2efa04e051233",
+            "name": "Get a single product type",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_types\/{product_type_id}",
+            "description": "Returns a single product type with a given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_type_id",
+                    "description": "Valid product type ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "a1f708eefeaaceedf778190aef103548",
+            "name": "List products",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/products",
+            "description": "Returns a paginated list of products.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "8408e09017d4aa3fa773618d1a1181d0",
+            "name": "Get a single product",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/products\/{product_id}",
+            "description": "Returns a single product object with a given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_id",
+                    "description": "The ID of a product included in the inventory count",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "56b2815d474698eba05a4dbecbf450b6",
+            "name": "Upload an image",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/products\/{product_id}\/actions\/image_upload",
+            "description": "Upload a binary file with an image to be used for a product. This request should be encoded as `multipart\/form-data`.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_id",
+                    "description": "The ID of a product included in the inventory count",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "image",
+                    "description": "File to upload. Can be in `jpg` or `png` format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "09d9a0b888f726974b69d25bce770234",
+            "name": "Get inventory data for a single product",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/products\/{product_id}\/inventory",
+            "description": "Returns inventory data for a single product in all the outlets.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_id",
+                    "description": "The ID of a product included in the inventory count",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "02da8de49142e578ea9dace6897515c8",
+            "name": "List registers",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/registers",
+            "description": "Returns a paginated list of registers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "834a7d08c846655e902fe62e36fa90d6",
+            "name": "Get a single register",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/registers\/{register_id}",
+            "description": "Returns a single register with the requested ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "register_id",
+                    "description": "Valid register ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "5cdd8acd3c67dda466ceafb9ecd54c39",
+            "name": "List Sales",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/sales",
+            "description": "Returns a paginated list of sales.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "0ccf87d52c365b597bd3a3161c38937e",
+            "name": "Get a single sale",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/sales\/{sale_id}",
+            "description": "Returns a single sale with a given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "sale_id",
+                    "description": "Valid sale ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "0d70c2ffd146f44d8bea7cfcb99186f1",
+            "name": "Search for resources",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/search",
+            "description": "This endpoint allows integrators to search all of the most commonly used resources, **sales**, **products** and **customers**. Each type allowing search by a number of different parameters.\n\n### Supported resource types and attributes\n\n- **Sales**\n  - date_from\n  - date_to\n  - status\n  - invoice_number\n  - customer_id\n  - user_id\n  - outlet_id\n- **Products**\n  - sku\n  - supplier_id\n  - brand_id\n  - tag_id\n  - product_type_id\n  - variant_parent_id\n- **Customers**\n  - customer_code\n  - first_name\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "type",
+                    "description": "The type of consignments to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order_by",
+                    "description": "The attribute used to sort items returned in the response.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order_direction",
+                    "description": "Sorting direction. One of: `asc`, `desc`.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page_size",
+                    "description": "The maximum number of objects to be included in the response, currently limited to 10000.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "The number of objects to be \"skipped\" for the response. Used for pagination.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "_id",
+                    "description": "The `id` of the object to be included in the response.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "-_id",
+                    "description": "The `id` of the object to be excluded from the response.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "deleted",
+                    "description": "Indicated whether deleted objects should be included in the response.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "status",
+                    "description": "The status of consignments to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "invoice_number",
+                    "description": "**SALES** Invoice number of the sale.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "customer_id",
+                    "description": "**SALES** The `ID` of the customer associated with the sales.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "user_id",
+                    "description": "**SALES** The `ID` of the user associated with the sales.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "outlet_id",
+                    "description": "The ID of the outlet which the consignment is targeted at.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_from",
+                    "description": "**SALES** Lower limit for the sale date as UTC timestamp. Format: `2016-08-08T12:00:00Z`.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_to",
+                    "description": "**SALES** Upper limit for the sale date as UTC timestamp. Format: `2016-08-08T12:00:00Z`.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sku",
+                    "description": "**PRODUCTS** The SKU of products to include in the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "-sku",
+                    "description": "**PRODUCTS** The SKU of products to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "supplier_id",
+                    "description": "**PRODUCTS** The ID of the supplier associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "-supplier_id",
+                    "description": "**PRODUCTS** The ID of the supplier associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "brand_id",
+                    "description": "**PRODUCTS** The ID of the brand associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "-brand_id",
+                    "description": "**PRODUCTS** The ID of the brand associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tag_id",
+                    "description": "**PRODUCTS** The ID of the tag associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "-tag_id",
+                    "description": "**PRODUCTS** The ID of the brand associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "product_type_id",
+                    "description": "**PRODUCTS** The ID of the product type associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "-product_type_id",
+                    "description": "**PRODUCTS** The ID of the product type associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "variant_parent_id",
+                    "description": "**PRODUCTS** The ID of the variant parent product associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "-variant_parent_id",
+                    "description": "**PRODUCTS** The ID of the variant parent product associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "customer_code",
+                    "description": "**CUSTOMERS** The `customer_code` associated with the customer to find.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "first_name",
+                    "description": "**CUSTOMERS** The `first_name` for the customers to find.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "last_name",
+                    "description": "**CUSTOMERS** The `last_name` for the customers to find.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "company_name",
+                    "description": "**CUSTOMERS** The `company_name` for the customers to find.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "e8049c00c00c5db901daa53cc08aeec2",
+            "name": "List suppliers",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/suppliers",
+            "description": "Returns a paginated list of suppliers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "cdba1ac5db281d382a9ee65357eed701",
+            "name": "Get a single supplier",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/suppliers\/{supplier_id}",
+            "description": "Returns a single supplier with a given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "supplier_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "7bb1fd78819c59384dfdf236f4100180",
+            "name": "List tags",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/tags",
+            "description": "Returns a collection of tags.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "8eecfdaac5306bb77b5bdb101e892673",
+            "name": "Get a single tag",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/tags\/{tag_id}",
+            "description": "Returns a single tag with a given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "tag_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "1f09ba275bcd84fbe7ec1a8aff6a4986",
+            "name": "List taxes",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/taxes",
+            "description": "Returns a paginated list of taxes.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "c75c8ca605b8ecf969bcddcab48cd3c0",
+            "name": "List users",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/users",
+            "description": "Returns a paginated list of users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "No Name",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        },
+        {
+            "id": "3006b31bb4e3cd9d01fbb4579f189f0c",
+            "name": "Get a single user",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/users\/{user_id}",
+            "description": "Returns a single user with the requested ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "user_id",
+                    "description": "Valid user ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "rawModeData": ""
+        }
+    ]
+}
