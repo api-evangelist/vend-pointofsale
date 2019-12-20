@@ -1,0 +1,3773 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "2.0",
+        "title": "API 2.0",
+        "description": "Early release of version 2.0 of the Vend API.",
+        "termsOfService": "https:\/\/www.vendhq.com\/terms"
+    },
+    "servers": [
+        "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0"
+    ],
+    "paths": {
+        "\/brands": {
+            "get": {
+                "summary": "List brands",
+                "description": "Returns a paginated list of brands.",
+                "operationId": "ListBrands",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/brands\/{brand_id}": {
+            "get": {
+                "summary": "Get a single brand",
+                "description": "Returns a single brand with a requested ID",
+                "operationId": "GetBrandByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "brand_id",
+                        "in": "path",
+                        "description": "Valid brand ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/consignments": {
+            "get": {
+                "summary": "List consignments",
+                "description": "Returns a paginated list of consignments.",
+                "operationId": "ListConsignments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "outlet_id",
+                        "in": "query",
+                        "description": "The ID of the outlet which the consignment is targeted at."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "The type of consignments to be returned."
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "The status of consignments to be returned."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create an inventory count",
+                "description": "Creates a new consignment of type `STOCKTAKE`. Currently, this endpoint only supports creation of inventory counts (stock takes).",
+                "operationId": "CreateInventoryCount",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/channel_requests": {
+            "get": {
+                "summary": "List request records",
+                "description": "Returns a list of request log records.",
+                "operationId": "ListRequests",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "status_code",
+                        "in": "query",
+                        "description": "Limit the requests to 1 or more status codes."
+                    },
+                    {
+                        "name": "request_method",
+                        "in": "query",
+                        "description": "Limit the requests to 1 or more request methods."
+                    },
+                    {
+                        "name": "occurred_before",
+                        "in": "query",
+                        "description": "Limit requests to before this RFC3339 date."
+                    },
+                    {
+                        "name": "occurred_after",
+                        "in": "query",
+                        "description": "Limit requests to after this RFC3339 date."
+                    },
+                    {
+                        "name": "status_code_before",
+                        "in": "query",
+                        "description": "Limit requests to those with status codes less than this value."
+                    },
+                    {
+                        "name": "status_code_after",
+                        "in": "query",
+                        "description": "Limit requests to those with status codes greater than this value."
+                    },
+                    {
+                        "name": "channel_id",
+                        "in": "query",
+                        "description": "If provided, request logs will be limited to the supplied channel id. If no id is provided, only requests logged with no channel id will be returned. Requests with no channel id indicate requests made during the setup process."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/channel_requests\/{request_log_id}": {
+            "get": {
+                "summary": "Get a single request log",
+                "description": "Returns a single request log entry with a specific ID.",
+                "operationId": "GetSingleRequest",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "request_log_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/channel_requests\/{request_log_id}.txt": {
+            "get": {
+                "summary": "Get a single request log as text",
+                "description": "Returns a text representation of a single request log entry with a specific ID.",
+                "operationId": "GetSingleRequestText",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "request_log_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/channels": {
+            "get": {
+                "summary": "List channel records",
+                "description": "Returns a list of configured channels.",
+                "operationId": "ListChannels",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/consignments\/{consignment_id}": {
+            "get": {
+                "summary": "Get a single consignment",
+                "description": "Returns a single consignment with the requested ID.",
+                "operationId": "GetConsignmentByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "path",
+                        "description": "Valid consignment ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an inventory count",
+                "description": "Updates the inventory count with requested ID.",
+                "operationId": "UpdateInventoryCountByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "path",
+                        "description": "Valid consignment ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a consignment",
+                "description": "Deletes the consignment with the given ID.",
+                "operationId": "DeleteConsignmentByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "path",
+                        "description": "Valid consignment ID."
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "\/consignments\/{consignment_id}\/products": {
+            "get": {
+                "summary": "List all products for a specific consignment",
+                "description": "Returns a collection of consignment products associated with the specified consignment.",
+                "operationId": "ListProductsByConsignmentID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "path",
+                        "description": "Valid consignment ID."
+                    },
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Adjust the inventory item count",
+                "description": "Increases or decreases the count for a specific product within the inventory count.",
+                "operationId": "AdjustInventoryItemCount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "path",
+                        "description": "Valid consignment ID."
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/consignments\/{consignment_id}\/products\/{product_id}": {
+            "delete": {
+                "summary": "Delete an item from an inventory count",
+                "description": "Removes the count for a specific product from the inventory count.",
+                "operationId": "DeleteItemFromInventoryCount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "consignment_id",
+                        "in": "path",
+                        "description": "Valid consignment ID."
+                    },
+                    {
+                        "name": "product_id",
+                        "in": "path",
+                        "description": "The ID of a product included in the inventory count"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "\/customer_groups": {
+            "get": {
+                "summary": "List customer groups",
+                "description": "Returns a paginated list of customer groups.",
+                "operationId": "ListCustomerGroups",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/customers": {
+            "get": {
+                "summary": "List customers",
+                "description": "Returns a paginated list of customers.",
+                "operationId": "ListCustomers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new customer",
+                "description": "Creates a new customer.",
+                "operationId": "CreateCustomer",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/customers\/{customer_id}": {
+            "get": {
+                "summary": "Get a single customer",
+                "description": "Returns a single customer with a requested ID.",
+                "operationId": "GetCustomerByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "customer_id",
+                        "in": "path",
+                        "description": "Valid customer ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a customer",
+                "description": "Updates the customer with the requested ID.",
+                "operationId": "UpdateCustomerByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "customer_id",
+                        "in": "path",
+                        "description": "Valid customer ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a customer",
+                "description": "Deletes the customer with the requested ID.",
+                "operationId": "DeleteCustomerByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "customer_id",
+                        "in": "path",
+                        "description": "Valid customer ID."
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "\/inventory": {
+            "get": {
+                "summary": "List inventory records",
+                "description": "Returns a paginated list of inventory records.",
+                "operationId": "ListInventoryRecords",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/outlet_taxes": {
+            "get": {
+                "summary": "List outlet product taxes",
+                "description": "Returns a paginated list of outlet-product-tax records.",
+                "operationId": "ListOutletProductTaxes",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "outlet_id",
+                        "in": "query",
+                        "description": "The ID of the outlet which the consignment is targeted at."
+                    },
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/outlets": {
+            "get": {
+                "summary": "List outlets",
+                "description": "Returns a collection of outlets.",
+                "operationId": "ListOutlets",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/outlets\/{outlet_id}": {
+            "get": {
+                "summary": "Get a single outlet",
+                "description": "Returns a single outlet with the requested ID.",
+                "operationId": "GetOutletByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "outlet_id",
+                        "in": "path",
+                        "description": "Valid Outlet ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/payment_types": {
+            "get": {
+                "summary": "List payment types",
+                "description": "Returns a paginated collection of payment types.",
+                "operationId": "ListPaymentTypes",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/price_book_products": {
+            "get": {
+                "summary": "List price book products",
+                "description": "Returns a paginated list of price book products.",
+                "operationId": "ListPriceBookProducts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/price_books": {
+            "get": {
+                "summary": "List price books",
+                "description": "Returns a paginated list of price books",
+                "operationId": "ListPriceBooks",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/price_books\/{price_book_id}": {
+            "get": {
+                "summary": "Get a single price book",
+                "description": "Returns a single price book with a requested ID",
+                "operationId": "GetPriceBookbyID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "price_book_id",
+                        "in": "path",
+                        "description": "Valid price book ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/product_images\/{product_image_id}": {
+            "get": {
+                "summary": "Get a single product_image data",
+                "description": "Returns the metadata for a single product image with a given ID.\nThis method is useful for checking the status of an image after it was uploaded.",
+                "operationId": "GetProductImageDataByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_image_id",
+                        "in": "path",
+                        "description": "Valid product ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Set image position",
+                "description": "Allows for changing the image position in the list",
+                "operationId": "SetImagePosition",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_image_id",
+                        "in": "path",
+                        "description": "Valid product ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a product_image",
+                "description": "Deletes the product_image with the requested ID.",
+                "operationId": "DeleteProductImageByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_image_id",
+                        "in": "path",
+                        "description": "Valid product ID."
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "\/product_types": {
+            "get": {
+                "summary": "List product types",
+                "description": "Returns a paginated list of product types.",
+                "operationId": "ListProductTypes",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/product_types\/{product_type_id}": {
+            "get": {
+                "summary": "Get a single product type",
+                "description": "Returns a single product type with a given ID.",
+                "operationId": "GetProductTypeByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_type_id",
+                        "in": "path",
+                        "description": "Valid product type ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/products": {
+            "get": {
+                "summary": "List products",
+                "description": "Returns a paginated list of products.",
+                "operationId": "ListProducts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/products\/{product_id}": {
+            "get": {
+                "summary": "Get a single product",
+                "description": "Returns a single product object with a given ID.",
+                "operationId": "GetProductByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_id",
+                        "in": "path",
+                        "description": "The ID of a product included in the inventory count"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/products\/{product_id}\/actions\/image_upload": {
+            "post": {
+                "summary": "Upload an image",
+                "description": "Upload a binary file with an image to be used for a product. This request should be encoded as `multipart\/form-data`.",
+                "operationId": "UploadImage",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_id",
+                        "in": "path",
+                        "description": "The ID of a product included in the inventory count"
+                    },
+                    {
+                        "name": "image",
+                        "in": "formData",
+                        "description": "File to upload. Can be in `jpg` or `png` format."
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/ConsignmentResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/products\/{product_id}\/inventory": {
+            "get": {
+                "summary": "Get inventory data for a single product",
+                "description": "Returns inventory data for a single product in all the outlets.",
+                "operationId": "GetInventoryByProductID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_id",
+                        "in": "path",
+                        "description": "The ID of a product included in the inventory count"
+                    },
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/registers": {
+            "get": {
+                "summary": "List registers",
+                "description": "Returns a paginated list of registers.",
+                "operationId": "ListRegisters",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/registers\/{register_id}": {
+            "get": {
+                "summary": "Get a single register",
+                "description": "Returns a single register with the requested ID.",
+                "operationId": "GetRegisterByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "register_id",
+                        "in": "path",
+                        "description": "Valid register ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/sales": {
+            "get": {
+                "summary": "List Sales",
+                "description": "Returns a paginated list of sales.",
+                "operationId": "ListSales",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/sales\/{sale_id}": {
+            "get": {
+                "summary": "Get a single sale",
+                "description": "Returns a single sale with a given ID.",
+                "operationId": "GetSaleByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "sale_id",
+                        "in": "path",
+                        "description": "Valid sale ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/search": {
+            "get": {
+                "summary": "Search for resources",
+                "description": "This endpoint allows integrators to search all of the most commonly used resources, **sales**, **products** and **customers**. Each type allowing search by a number of different parameters.\n\n### Supported resource types and attributes\n\n- **Sales**\n  - date_from\n  - date_to\n  - status\n  - invoice_number\n  - customer_id\n  - user_id\n  - outlet_id\n- **Products**\n  - sku\n  - supplier_id\n  - brand_id\n  - tag_id\n  - product_type_id\n  - variant_parent_id\n- **Customers**\n  - customer_code\n  - first_name\n",
+                "operationId": "Search",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "The type of consignments to be returned."
+                    },
+                    {
+                        "name": "order_by",
+                        "in": "query",
+                        "description": "The attribute used to sort items returned in the response."
+                    },
+                    {
+                        "name": "order_direction",
+                        "in": "query",
+                        "description": "Sorting direction. One of: `asc`, `desc`."
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "The maximum number of objects to be included in the response, currently limited to 10000."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The number of objects to be \"skipped\" for the response. Used for pagination."
+                    },
+                    {
+                        "name": "_id",
+                        "in": "query",
+                        "description": "The `id` of the object to be included in the response."
+                    },
+                    {
+                        "name": "-_id",
+                        "in": "query",
+                        "description": "The `id` of the object to be excluded from the response."
+                    },
+                    {
+                        "name": "deleted",
+                        "in": "query",
+                        "description": "Indicated whether deleted objects should be included in the response."
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "The status of consignments to be returned."
+                    },
+                    {
+                        "name": "invoice_number",
+                        "in": "query",
+                        "description": "**SALES** Invoice number of the sale."
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "query",
+                        "description": "**SALES** The `ID` of the customer associated with the sales."
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "**SALES** The `ID` of the user associated with the sales."
+                    },
+                    {
+                        "name": "outlet_id",
+                        "in": "query",
+                        "description": "The ID of the outlet which the consignment is targeted at."
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "**SALES** Lower limit for the sale date as UTC timestamp. Format: `2016-08-08T12:00:00Z`."
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "**SALES** Upper limit for the sale date as UTC timestamp. Format: `2016-08-08T12:00:00Z`."
+                    },
+                    {
+                        "name": "sku",
+                        "in": "query",
+                        "description": "**PRODUCTS** The SKU of products to include in the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "-sku",
+                        "in": "query",
+                        "description": "**PRODUCTS** The SKU of products to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "supplier_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the supplier associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "-supplier_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the supplier associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "brand_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the brand associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "-brand_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the brand associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "tag_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the tag associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "-tag_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the brand associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "product_type_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the product type associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "-product_type_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the product type associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "variant_parent_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the variant parent product associated with the product to include in the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "-variant_parent_id",
+                        "in": "query",
+                        "description": "**PRODUCTS** The ID of the variant parent product associated with the product to exclude from the search.\nCan be used multiple times to search for objects with different values of this parameter."
+                    },
+                    {
+                        "name": "customer_code",
+                        "in": "query",
+                        "description": "**CUSTOMERS** The `customer_code` associated with the customer to find."
+                    },
+                    {
+                        "name": "first_name",
+                        "in": "query",
+                        "description": "**CUSTOMERS** The `first_name` for the customers to find."
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "query",
+                        "description": "**CUSTOMERS** The `last_name` for the customers to find."
+                    },
+                    {
+                        "name": "company_name",
+                        "in": "query",
+                        "description": "**CUSTOMERS** The `company_name` for the customers to find."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/suppliers": {
+            "get": {
+                "summary": "List suppliers",
+                "description": "Returns a paginated list of suppliers.",
+                "operationId": "ListSuppliers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/suppliers\/{supplier_id}": {
+            "get": {
+                "summary": "Get a single supplier",
+                "description": "Returns a single supplier with a given ID.",
+                "operationId": "GetSupplierByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "supplier_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/tags": {
+            "get": {
+                "summary": "List tags",
+                "description": "Returns a collection of tags.",
+                "operationId": "ListTags",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/tags\/{tag_id}": {
+            "get": {
+                "summary": "Get a single tag",
+                "description": "Returns a single tag with a given ID.",
+                "operationId": "GetTagByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "tag_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/taxes": {
+            "get": {
+                "summary": "List taxes",
+                "description": "Returns a paginated list of taxes.",
+                "operationId": "ListTaxes",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/users": {
+            "get": {
+                "summary": "List users",
+                "description": "Returns a paginated list of users.",
+                "operationId": "ListUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "No Name",
+                        "in": "query",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/users\/{user_id}": {
+            "get": {
+                "summary": "Get a single user",
+                "description": "Returns a single user with the requested ID.",
+                "operationId": "GetUserByID",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "Valid user ID."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/BrandCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Brand": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "BrandCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "data": {
+                "type": "array"
+            },
+            "version": {
+                "type": "object",
+                "properties": {
+                    "min": {
+                        "description": "Lowest version number of the payload.",
+                        "type": "integer"
+                    },
+                    "max": {
+                        "description": "Highest version number of the payload.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "BrandResponse": {
+                "type": "object",
+                "properties": {
+                    "Brand": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "BrandSample": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Channel": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "store_url": {
+                        "description": "The store identifier.",
+                        "type": "string"
+                    },
+                    "channel_type": {
+                        "description": "The type of channel this is.",
+                        "type": "string"
+                    },
+                    "register_id": {
+                        "description": "The Vend register id that sales will be associated to.",
+                        "type": "string"
+                    },
+                    "payment_type_id": {
+                        "description": "The Vend payment type id that sale payments will be associated to.",
+                        "type": "string"
+                    },
+                    "inventory_outlet_ids": {
+                        "description": "The Vend outlet ids that count towards inventory.",
+                        "type": "array"
+                    },
+                    "created_at": {
+                        "description": "An RFC3339 representation of the time at which the channel was created.",
+                        "type": "string"
+                    },
+                    "sales_last_imported_at": {
+                        "description": "An RFC3339 representation of the time at which sales were last imported.",
+                        "type": "string"
+                    },
+                    "products_last_imported_at": {
+                        "description": "An RFC3339 representation of the time at which products were last imported.",
+                        "type": "string"
+                    }
+                }
+            },
+            "inventory_outlet_ids": {
+                "type": "array"
+            },
+            "ChannelCollectionResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    }
+                }
+            },
+            "Consignment": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "A valid ID of an outlet where stock will be received.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "consignment_date": {
+                        "description": "11-28T19:02:15+00:00 (timestamp) - Consignment creation date.",
+                        "type": "string"
+                    },
+                    "due_at": {
+                        "description": "11-30T19:08:541+00:00 (timestamp) - Due date.",
+                        "type": "string"
+                    },
+                    "received_at": {
+                        "description": "11-30T19:08:541+00:00 (timestamp) - The date when consignment was received.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "One of `SUPPLIER`, `OUTLET`, `STOCKTAKE`, `RETURN`.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "One of `OPEN`, `RECEIVED`, `SENT`, `STOCKTAKE`, `STOCKTAKE_SCHEDULED`, `STOCKTAKE_IN_PROGRESS`, `STOCKTAKE_IN_PROGRESS_PROCESSED`, `STOCKTAKE_COMPLETE`, `CLOSED`, `CANCELLED`",
+                        "type": "string"
+                    },
+                    "supplier_id": {
+                        "description": "a valid supplier ID.",
+                        "type": "string"
+                    },
+                    "source_outlet_id": {
+                        "description": "A valid ID of an outlet where stock will come from. **Stock transfers only**.",
+                        "type": "string"
+                    },
+                    "supplier_invoice": {
+                        "description": "Supplier invoice number.",
+                        "type": "string"
+                    },
+                    "reference": {
+                        "description": "Order number.+ `total_count_gain` (number)",
+                        "type": "string"
+                    },
+                    "total_cost_gain": {
+                        "description": "The cost of items over the expected level.",
+                        "type": "number"
+                    },
+                    "total_count_loss": {
+                        "description": "The number of items below the expected level.",
+                        "type": "number"
+                    },
+                    "total_cost_loss": {
+                        "description": "The cost of items below the expected level.",
+                        "type": "number"
+                    },
+                    "created_at": {
+                        "description": "An RFC3339 representation of the time at which the channel was created.",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    },
+                    "total_count_gain": {
+                        "description": "The number of items over the expected level.",
+                        "type": "number"
+                    }
+                }
+            },
+            "ConsignmentCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ConsignmentProductCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    }
+                }
+            },
+            "ConsignmentResponse": {
+                "type": "object",
+                "properties": {
+                    "Consignment": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "Customer": {
+                "type": "object",
+                "properties": {
+                    "first_name": {
+                        "description": "Customer's first name.",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "Customer 's last name.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "customer_code": {
+                        "description": "Customer code used for claiming loyalty.",
+                        "type": "string"
+                    },
+                    "customer_group_id": {
+                        "description": "Customer group ID.",
+                        "type": "string"
+                    },
+                    "enable_loyalty": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "description": "Customer's email address.",
+                        "type": "string"
+                    },
+                    "note": {
+                        "description": "Customer note.",
+                        "type": "string"
+                    },
+                    "gender": {
+                        "description": "Customer's gender. Can be `M`, `F` or null.",
+                        "type": "string"
+                    },
+                    "date_of_birth": {
+                        "description": "Birthday.",
+                        "type": "string"
+                    },
+                    "company_name": {
+                        "description": "Company name.",
+                        "type": "string"
+                    },
+                    "do_not_email": {
+                        "description": "Indicates whether the customer opted out of email communications.",
+                        "type": "boolean"
+                    },
+                    "phone": {
+                        "description": "Phone no.",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "Mobile phone no.",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Fax no.",
+                        "type": "string"
+                    },
+                    "twitter": {
+                        "description": "Twitter handle.",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website URL.",
+                        "type": "string"
+                    },
+                    "physical_address_1": {
+                        "description": "Physical address, line 1.",
+                        "type": "string"
+                    },
+                    "physical_address_2": {
+                        "description": "Physical address, line 2.",
+                        "type": "string"
+                    },
+                    "physical_suburb": {
+                        "description": "Physical address, suburb.",
+                        "type": "string"
+                    },
+                    "physical_city": {
+                        "description": "Physical address, city.",
+                        "type": "string"
+                    },
+                    "physical_postcode": {
+                        "description": "Physical address, post code.",
+                        "type": "string"
+                    },
+                    "physical_state": {
+                        "description": "Physical address, state.",
+                        "type": "string"
+                    },
+                    "physical_country_id": {
+                        "description": "Physical address, country code.",
+                        "type": "string"
+                    },
+                    "postal_address_1": {
+                        "description": "Postal address, line 1.",
+                        "type": "string"
+                    },
+                    "postal_address_2": {
+                        "description": "Postal address, line 2.",
+                        "type": "string"
+                    },
+                    "postal_suburb": {
+                        "description": "Postal address, suburb.",
+                        "type": "string"
+                    },
+                    "postal_city": {
+                        "description": "Postal address, city.",
+                        "type": "string"
+                    },
+                    "postal_postcode": {
+                        "description": "Postal address, post code.",
+                        "type": "string"
+                    },
+                    "postal_state": {
+                        "description": "Postal address, state.",
+                        "type": "string"
+                    },
+                    "postal_country_id": {
+                        "description": "Postal address, country code.",
+                        "type": "string"
+                    },
+                    "custom_field_1": {
+                        "description": "Custom field 1. Can be used to store random data.",
+                        "type": "string"
+                    },
+                    "custom_field_2": {
+                        "description": "Custom field 2.",
+                        "type": "string"
+                    },
+                    "custom_field_3": {
+                        "description": "Custom field 3.",
+                        "type": "string"
+                    },
+                    "custom_field_4": {
+                        "description": "Custom field 4.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "year_to_date": {
+                        "description": "Customer's spending this year.",
+                        "type": "number"
+                    },
+                    "balance": {
+                        "description": "Customer's unpaid balance.",
+                        "type": "number"
+                    },
+                    "loyalty_balance": {
+                        "description": "Customer's loyalty balance.",
+                        "type": "number"
+                    },
+                    "created_at": {
+                        "description": "An RFC3339 representation of the time at which the channel was created.",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "CustomerBase": {
+                "type": "object",
+                "properties": {
+                    "first_name": {
+                        "description": "Customer's first name.",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "Customer 's last name.",
+                        "type": "string"
+                    },
+                    "customer_code": {
+                        "description": "Customer code used for claiming loyalty.",
+                        "type": "string"
+                    },
+                    "customer_group_id": {
+                        "description": "Customer group ID.",
+                        "type": "string"
+                    },
+                    "enable_loyalty": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "description": "Customer's email address.",
+                        "type": "string"
+                    },
+                    "note": {
+                        "description": "Customer note.",
+                        "type": "string"
+                    },
+                    "gender": {
+                        "description": "Customer's gender. Can be `M`, `F` or null.",
+                        "type": "string"
+                    },
+                    "date_of_birth": {
+                        "description": "Birthday.",
+                        "type": "string"
+                    },
+                    "company_name": {
+                        "description": "Company name.",
+                        "type": "string"
+                    },
+                    "do_not_email": {
+                        "description": "Indicates whether the customer opted out of email communications.",
+                        "type": "boolean"
+                    },
+                    "phone": {
+                        "description": "Phone no.",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "Mobile phone no.",
+                        "type": "string"
+                    },
+                    "fax": {
+                        "description": "Fax no.",
+                        "type": "string"
+                    },
+                    "twitter": {
+                        "description": "Twitter handle.",
+                        "type": "string"
+                    },
+                    "website": {
+                        "description": "Website URL.",
+                        "type": "string"
+                    },
+                    "physical_address_1": {
+                        "description": "Physical address, line 1.",
+                        "type": "string"
+                    },
+                    "physical_address_2": {
+                        "description": "Physical address, line 2.",
+                        "type": "string"
+                    },
+                    "physical_suburb": {
+                        "description": "Physical address, suburb.",
+                        "type": "string"
+                    },
+                    "physical_city": {
+                        "description": "Physical address, city.",
+                        "type": "string"
+                    },
+                    "physical_postcode": {
+                        "description": "Physical address, post code.",
+                        "type": "string"
+                    },
+                    "physical_state": {
+                        "description": "Physical address, state.",
+                        "type": "string"
+                    },
+                    "physical_country_id": {
+                        "description": "Physical address, country code.",
+                        "type": "string"
+                    },
+                    "postal_address_1": {
+                        "description": "Postal address, line 1.",
+                        "type": "string"
+                    },
+                    "postal_address_2": {
+                        "description": "Postal address, line 2.",
+                        "type": "string"
+                    },
+                    "postal_suburb": {
+                        "description": "Postal address, suburb.",
+                        "type": "string"
+                    },
+                    "postal_city": {
+                        "description": "Postal address, city.",
+                        "type": "string"
+                    },
+                    "postal_postcode": {
+                        "description": "Postal address, post code.",
+                        "type": "string"
+                    },
+                    "postal_state": {
+                        "description": "Postal address, state.",
+                        "type": "string"
+                    },
+                    "postal_country_id": {
+                        "description": "Postal address, country code.",
+                        "type": "string"
+                    },
+                    "custom_field_1": {
+                        "description": "Custom field 1. Can be used to store random data.",
+                        "type": "string"
+                    },
+                    "custom_field_2": {
+                        "description": "Custom field 2.",
+                        "type": "string"
+                    },
+                    "custom_field_3": {
+                        "description": "Custom field 3.",
+                        "type": "string"
+                    },
+                    "custom_field_4": {
+                        "description": "Custom field 4.",
+                        "type": "string"
+                    }
+                }
+            },
+            "CustomerCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "CustomerGroup": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "group_id": {
+                        "description": "The customer group identifier.",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "An RFC3339 representation of the time at which the channel was created.",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "CustomerGroupCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "CustomerResponse": {
+                "type": "object",
+                "properties": {
+                    "Customer": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "Image": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    },
+                    "product_id": {
+                        "description": "The ID of the product this image is associated with.",
+                        "type": "string"
+                    },
+                    "position": {
+                        "description": "Position of the image in collection of images associated with a product.",
+                        "type": "number"
+                    },
+                    "status": {
+                        "description": "One of `OPEN`, `RECEIVED`, `SENT`, `STOCKTAKE`, `STOCKTAKE_SCHEDULED`, `STOCKTAKE_IN_PROGRESS`, `STOCKTAKE_IN_PROGRESS_PROCESSED`, `STOCKTAKE_COMPLETE`, `CLOSED`, `CANCELLED`",
+                        "type": "string"
+                    }
+                }
+            },
+            "ImagePosition": {
+                "type": "object",
+                "properties": {
+                    "position": {
+                        "description": "Position of the image in collection of images associated with a product.",
+                        "type": "number"
+                    }
+                }
+            },
+            "ImageResponse": {
+                "type": "object",
+                "properties": {
+                    "Image": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ImageSample": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Inventory": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "product_id": {
+                        "description": "The ID of the product this image is associated with.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "A valid ID of an outlet where stock will be received.",
+                        "type": "string"
+                    },
+                    "inventory_level": {
+                        "description": "Current inventory level.",
+                        "type": "number"
+                    },
+                    "reorder_point": {
+                        "description": "Level at which a product should be automatically included in stock orders.",
+                        "type": "number"
+                    },
+                    "reorder_amount": {
+                        "description": "Amount to be added to the automatic stock order.",
+                        "type": "number"
+                    }
+                }
+            },
+            "InventoryCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "InventoryCount": {
+                "type": "object",
+                "properties": {
+                    "outlet_id": {
+                        "description": "A valid ID of an outlet where stock will be received.",
+                        "type": "string"
+                    },
+                    "due_at": {
+                        "description": "11-30T19:08:541+00:00 (timestamp) - Due date.",
+                        "type": "string"
+                    },
+                    "show_inactive": {
+                        "description": "Indicates whether inactive products should be included in the count.",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "One of `OPEN`, `RECEIVED`, `SENT`, `STOCKTAKE`, `STOCKTAKE_SCHEDULED`, `STOCKTAKE_IN_PROGRESS`, `STOCKTAKE_IN_PROGRESS_PROCESSED`, `STOCKTAKE_COMPLETE`, `CLOSED`, `CANCELLED`",
+                        "type": "string"
+                    },
+                    "filters": {
+                        "description": "An array of filter objects. Max 25.",
+                        "type": "array"
+                    },
+                    "type": {
+                        "description": "One of `SUPPLIER`, `OUTLET`, `STOCKTAKE`, `RETURN`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "filters": {
+                "type": "array"
+            },
+            "InventoryCountFilter": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "description": "One of `SUPPLIER`, `OUTLET`, `STOCKTAKE`, `RETURN`.",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "The ID of the filter object.",
+                        "type": "string"
+                    }
+                }
+            },
+            "InventoryCountItem": {
+                "type": "object",
+                "properties": {
+                    "product_id": {
+                        "description": "The ID of the product this image is associated with.",
+                        "type": "string"
+                    },
+                    "product_sku": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "count": {
+                        "description": "Expected item count.",
+                        "type": "string"
+                    },
+                    "received": {
+                        "description": "Observed item count.",
+                        "type": "string"
+                    },
+                    "cost": {
+                        "description": "The cost of the item.",
+                        "type": "string"
+                    },
+                    "is_included": {
+                        "description": "Indicated whether the item was included via a filter. Can be `null`. For full count (no filters) always `true`.",
+                        "type": "boolean"
+                    },
+                    "status": {
+                        "description": "One of `OPEN`, `RECEIVED`, `SENT`, `STOCKTAKE`, `STOCKTAKE_SCHEDULED`, `STOCKTAKE_IN_PROGRESS`, `STOCKTAKE_IN_PROGRESS_PROCESSED`, `STOCKTAKE_COMPLETE`, `CLOSED`, `CANCELLED`",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "An RFC3339 representation of the time at which the channel was created.",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "InventoryCountItemRequest": {
+                "type": "object",
+                "properties": {
+                    "product_id": {
+                        "description": "The ID of the product this image is associated with.",
+                        "type": "string"
+                    },
+                    "received": {
+                        "description": "Observed item count.",
+                        "type": "string"
+                    }
+                }
+            },
+            "InventoryCountItemResponse": {
+                "type": "object",
+                "properties": {
+                    "InventoryCountItem": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "LineItem": {
+                "type": "object",
+                "properties": {
+                    "tax_id": {
+                        "description": "???",
+                        "type": "string"
+                    },
+                    "discount_total": {
+                        "description": "Total discount for the line item.",
+                        "type": "number"
+                    },
+                    "is_return": {
+                        "description": "Indicates whether this line item is a return from another sale (referenced by `return_for` on the main sale object).",
+                        "type": "boolean"
+                    },
+                    "cost": {
+                        "description": "Unit cost for the line item.",
+                        "type": "number"
+                    },
+                    "cost_total": {
+                        "description": "Total cost for the line item.",
+                        "type": "number"
+                    },
+                    "price_total": {
+                        "description": "Total price for the line item.",
+                        "type": "number"
+                    },
+                    "tax": {
+                        "description": "Unit tax for the line item. **deprecated** ???",
+                        "type": "number"
+                    },
+                    "tax_total": {
+                        "description": "Total tax value.",
+                        "type": "number"
+                    },
+                    "product_id": {
+                        "description": "The ID of the product this image is associated with.",
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "description": "Quantity of product units included in the sale.",
+                        "type": "number"
+                    },
+                    "price": {
+                        "description": "Unit price for the product.",
+                        "type": "number"
+                    },
+                    "tax_components": {
+                        "description": "Collection of tax components associated with the line item.",
+                        "type": "array"
+                    },
+                    "discount": {
+                        "description": "Discount. ??? Unit? Should that be even posted?",
+                        "type": "number"
+                    },
+                    "loyalty_value": {
+                        "description": "The value that should be added to associated customer's loyalty balance.",
+                        "type": "number"
+                    },
+                    "price_set": {
+                        "description": "Indicates whether the price was set manually. Using `true` means that the value will never be refreshed from the price book when reloaded (sale retrieved from parked sales).",
+                        "type": "boolean"
+                    },
+                    "sequence": {
+                        "description": "Order of the line item in the sale.",
+                        "type": "number"
+                    },
+                    "note": {
+                        "description": "Customer note.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "One of `OPEN`, `RECEIVED`, `SENT`, `STOCKTAKE`, `STOCKTAKE_SCHEDULED`, `STOCKTAKE_IN_PROGRESS`, `STOCKTAKE_IN_PROGRESS_PROCESSED`, `STOCKTAKE_COMPLETE`, `CLOSED`, `CANCELLED`",
+                        "type": "string"
+                    }
+                }
+            },
+            "tax_components": {
+                "type": "array"
+            },
+            "LineItemTaxComponent": {
+                "type": "object",
+                "properties": {
+                    "rate_id": {
+                        "description": "Tax rate ID.",
+                        "type": "string"
+                    },
+                    "total_tax": {
+                        "description": "Tax total.",
+                        "type": "number"
+                    }
+                }
+            },
+            "Outlet": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "time_zone": {
+                        "description": "Outlet timezone. **read only**",
+                        "type": "string"
+                    },
+                    "default_tax_id": {
+                        "description": "Default tax id used for sales in this outlet. **deprecated**",
+                        "type": "string"
+                    },
+                    "currency": {
+                        "description": "Currency name.",
+                        "type": "string"
+                    },
+                    "currency_symbol": {
+                        "description": "Currency symbol.",
+                        "type": "string"
+                    },
+                    "display_prices": {
+                        "description": "Indicates whether prices in this outlet should be displayed as tax-inclusive.",
+                        "type": "string"
+                    },
+                    "physical_address_1": {
+                        "description": "Physical address, line 1.",
+                        "type": "string"
+                    },
+                    "physical_address_2": {
+                        "description": "Physical address, line 2.",
+                        "type": "string"
+                    },
+                    "physical_suburb": {
+                        "description": "Physical address, suburb.",
+                        "type": "string"
+                    },
+                    "physical_city": {
+                        "description": "Physical address, city.",
+                        "type": "string"
+                    },
+                    "physical_postcode": {
+                        "description": "Physical address, post code.",
+                        "type": "string"
+                    },
+                    "physical_state": {
+                        "description": "Physical address, state.",
+                        "type": "string"
+                    },
+                    "physical_country_id": {
+                        "description": "Physical address, country code.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "OutletCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "OutletResponse": {
+                "type": "object",
+                "properties": {
+                    "Outlet": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "OutletTax": {
+                "type": "object",
+                "properties": {
+                    "outlet_id": {
+                        "description": "A valid ID of an outlet where stock will be received.",
+                        "type": "string"
+                    },
+                    "product_id": {
+                        "description": "The ID of the product this image is associated with.",
+                        "type": "string"
+                    },
+                    "tax_id": {
+                        "description": "???",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "OutletTaxCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "Payment": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "register_id": {
+                        "description": "The Vend register id that sales will be associated to.",
+                        "type": "string"
+                    },
+                    "retailer_payment_type_id": {
+                        "description": "A valid retailer payment type ID.",
+                        "type": "string"
+                    },
+                    "payment_type_id": {
+                        "description": "The Vend payment type id that sale payments will be associated to.",
+                        "type": "string"
+                    },
+                    "payment_date": {
+                        "description": "Payment date in UTC.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "Payment amount.",
+                        "type": "number"
+                    }
+                }
+            },
+            "PaymentType": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "type_id": {
+                        "description": "The ID of the global Vend payment type. It shouldn't be used to identify the payment type - there may be multiple payment types with the same `type_id`.",
+                        "type": "integer"
+                    },
+                    "config": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "deleted_at": {
+                        "description": "The deletion timestamp.",
+                        "type": "null"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "config": {
+                "type": "object"
+            },
+            "PaymentTypeCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "PaymentTypeConfig": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "print": {
+                        "description": "Indicates whether a receipt will be printed???",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "PriceBook": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "customer_group_id": {
+                        "description": "Customer group ID.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "valid_from": {
+                        "description": "The date when the price book becomes valid (active).",
+                        "type": "string"
+                    },
+                    "valid_to": {
+                        "description": "The date when the price book becomes invalid (inactive).",
+                        "type": "string"
+                    },
+                    "restrict_to_platform_key": {
+                        "description": "`\"0\"` - all platforms, `\"1\"` - in store, `\"2\"` - ecommerce.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "A valid ID of an outlet where stock will be received.",
+                        "type": "string"
+                    },
+                    "restrict_to_platform_label": {
+                        "description": "One of `In Store`, `Ecommerce`, `All Platforms`.",
+                        "type": "string"
+                    },
+                    "CustomerGroup": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "customer_group": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    }
+                }
+            },
+            "PriceBookBase": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "customer_group_id": {
+                        "description": "Customer group ID.",
+                        "type": "string"
+                    },
+                    "valid_from": {
+                        "description": "The date when the price book becomes valid (active).",
+                        "type": "string"
+                    },
+                    "valid_to": {
+                        "description": "The date when the price book becomes invalid (inactive).",
+                        "type": "string"
+                    },
+                    "restrict_to_platform_key": {
+                        "description": "`\"0\"` - all platforms, `\"1\"` - in store, `\"2\"` - ecommerce.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "A valid ID of an outlet where stock will be received.",
+                        "type": "string"
+                    }
+                }
+            },
+            "PriceBookCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "PriceBookProduct": {
+                "type": "object",
+                "properties": {
+                    "product_id": {
+                        "description": "The ID of the product this image is associated with.",
+                        "type": "string"
+                    },
+                    "price_book_id": {
+                        "description": "The ID of the price book this product belongs to.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "price": {
+                        "description": "Unit price for the product.",
+                        "type": "number"
+                    },
+                    "loyalty_value": {
+                        "description": "The value that should be added to associated customer's loyalty balance.",
+                        "type": "number"
+                    },
+                    "min_units": {
+                        "description": "The minimum number of items for which this price will be used.",
+                        "type": "number"
+                    },
+                    "max_units": {
+                        "description": "The maximum number of items for which this price will be used.",
+                        "type": "number"
+                    },
+                    "created_at": {
+                        "description": "An RFC3339 representation of the time at which the channel was created.",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    }
+                }
+            },
+            "PriceBookProductCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "PriceBookResponse": {
+                "type": "object",
+                "properties": {
+                    "PriceBook": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "Product": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "handle": {
+                        "description": "Product handle. **Note:** Variants share the same handle.",
+                        "type": "string"
+                    },
+                    "sku": {
+                        "description": "Product sku. **Note:** Should be unique, but it's not verified while posting.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "source_id": {
+                        "description": "External reference ID.",
+                        "type": "string"
+                    },
+                    "source_variant_id": {
+                        "description": "Secondary external reference ID.",
+                        "type": "string"
+                    },
+                    "variant_parent_id": {
+                        "description": "This value is set if a Product is a variant of another Product.",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "Indicates the origin of the product. Can be USER, SYSTEM, SHOPIFY.",
+                        "type": "string"
+                    },
+                    "active": {
+                        "description": "Indicated whether the Product is active.",
+                        "type": "boolean"
+                    },
+                    "has_inventory": {
+                        "description": "Indicates whether inventory is being tracked for the Product.",
+                        "type": "boolean"
+                    },
+                    "is_composite": {
+                        "description": "Indicates whether the Product is a composite one.",
+                        "type": "boolean"
+                    },
+                    "has_variants": {
+                        "description": "Indicated whether product has variants.",
+                        "type": "boolean"
+                    },
+                    "description": {
+                        "description": "A detailed description of the Product. **Note** Can contain HTML.",
+                        "type": "string"
+                    },
+                    "supplier_code": {
+                        "description": "Supplier code.",
+                        "type": "string"
+                    },
+                    "supply_price": {
+                        "description": "Default supply price,",
+                        "type": "number"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "supplier": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "BrandSample": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "brand": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "variant_options": {
+                        "description": "A list of variant option objects.",
+                        "type": "array"
+                    },
+                    "categories": {
+                        "description": "A list of tag objects.",
+                        "type": "array"
+                    },
+                    "image_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "image_thumbnail_url": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "images": {
+                        "description": "A list of image objects.",
+                        "type": "array"
+                    },
+                    "created_at": {
+                        "description": "An RFC3339 representation of the time at which the channel was created.",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "type": {
+                "type": "object"
+            },
+            "supplier": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "variant_options": {
+                "type": "array"
+            },
+            "categories": {
+                "type": "array"
+            },
+            "images": {
+                "type": "object"
+            },
+            "ProductCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ProductResponse": {
+                "type": "object",
+                "properties": {
+                    "Product": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ProductType": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ProductTypeCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ProductTypeResponse": {
+                "type": "object",
+                "properties": {
+                    "ProductType": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ProductTypeSample": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Register": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "A valid ID of an outlet where stock will be received.",
+                        "type": "string"
+                    },
+                    "ask_for_note_on_save": {
+                        "description": "`0` for **Never**, `1` for **On Save\/Layby\/Account\/Return**, `2` for **Always**.",
+                        "type": "number"
+                    },
+                    "print_note_on_receipt": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "ask_for_user_on_sale": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "show_discounts_on_receipts": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "print_receipt": {
+                        "description": "Indicates whether a receipt should be printed after a sale.",
+                        "type": "boolean"
+                    },
+                    "email_receipt": {
+                        "description": "Indicates whether a receipt should be emailed after a sale.",
+                        "type": "boolean"
+                    },
+                    "invoice_prefix": {
+                        "description": "Invoice number prefix.",
+                        "type": "string"
+                    },
+                    "invoice_suffix": {
+                        "description": "Invoice number suffix.",
+                        "type": "string"
+                    },
+                    "invoice_sequence": {
+                        "description": "The numeric part of the last issued invoice.",
+                        "type": "number"
+                    },
+                    "button_layout_id": {
+                        "description": "Register ID.",
+                        "type": "string"
+                    },
+                    "is_open": {
+                        "description": "Indicates if the Register is currently open.",
+                        "type": "boolean"
+                    },
+                    "register_open_time": {
+                        "description": "Date\/time when the register was open. Always in UTC.",
+                        "type": "string"
+                    },
+                    "register_close_time": {
+                        "description": "Date\/time when the register was closed. Null if currently open.",
+                        "type": "string"
+                    },
+                    "register_open_sequence_id": {
+                        "description": "**internal** The ID of the current register closure object.",
+                        "type": "string"
+                    },
+                    "cash_managed_payment_type_id": {
+                        "description": "**internal** The ID of the payment type used for cash management transactions in this regsiter.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "RegisterCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "RegisterResponse": {
+                "type": "object",
+                "properties": {
+                    "Register": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "RequestLog": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "grouping_id": {
+                        "description": "An identifier used to group together requests that occurred together as part of the same job or Vend API request.",
+                        "type": "string"
+                    },
+                    "request_method": {
+                        "description": "The HTTP method used to make the request.",
+                        "type": "string"
+                    },
+                    "status_code": {
+                        "description": "The HTTP status code received in the response.",
+                        "type": "number"
+                    },
+                    "request": {
+                        "description": "A dump of the full request information in HTTP format, including headers and any request body.",
+                        "type": "string"
+                    },
+                    "response": {
+                        "description": "A dump of the full response information in HTTP format, including headers and any response body.",
+                        "type": "string"
+                    },
+                    "error": {
+                        "description": "f an error occurred with the request, such as an inability to resolve a hostname, connect or TLS errors, this will be recorded here. Only errors with the ability to make the request are logged here, rather than errors when interpreting a response.",
+                        "type": "string"
+                    },
+                    "occurred_at": {
+                        "description": "An RFC3339 representation of the time at which the request was logged.",
+                        "type": "string"
+                    }
+                }
+            },
+            "RequestCollectionResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    }
+                }
+            },
+            "RequestSingleResponse": {
+                "type": "object",
+                "properties": {
+                    "RequestLog": {
+                        "description": "An object representing a single request and response made to a channel.",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "Sale": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "outlet_id": {
+                        "description": "A valid ID of an outlet where stock will be received.",
+                        "type": "string"
+                    },
+                    "register_id": {
+                        "description": "The Vend register id that sales will be associated to.",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "Valid user ID for the retailer.",
+                        "type": "string"
+                    },
+                    "customer_id": {
+                        "description": "Valid customer ID for the retailer.",
+                        "type": "string"
+                    },
+                    "invoice_number": {
+                        "description": "Invoice number which if provided, should use the prefix and suffix defined for the register.",
+                        "type": "string"
+                    },
+                    "invoice_sequence": {
+                        "description": "The numeric part of the last issued invoice.",
+                        "type": "number"
+                    },
+                    "source": {
+                        "description": "Indicates the origin of the product. Can be USER, SYSTEM, SHOPIFY.",
+                        "type": "string"
+                    },
+                    "source_id": {
+                        "description": "External reference ID.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "One of `OPEN`, `RECEIVED`, `SENT`, `STOCKTAKE`, `STOCKTAKE_SCHEDULED`, `STOCKTAKE_IN_PROGRESS`, `STOCKTAKE_IN_PROGRESS_PROCESSED`, `STOCKTAKE_COMPLETE`, `CLOSED`, `CANCELLED`",
+                        "type": "string"
+                    },
+                    "note": {
+                        "description": "Customer note.",
+                        "type": "string"
+                    },
+                    "short_code": {
+                        "description": "6 character code used in the loyalty system. ???",
+                        "type": "string"
+                    },
+                    "return_for": {
+                        "description": "Reference ID to a different sale if this sale was created as a return.",
+                        "type": "string"
+                    },
+                    "total_price": {
+                        "description": "Total (tax exclusive) price of the sale",
+                        "type": "number"
+                    },
+                    "total_tax": {
+                        "description": "Tax total.",
+                        "type": "number"
+                    },
+                    "total_loyalty": {
+                        "description": "Total incurred loyalty.",
+                        "type": "number"
+                    },
+                    "sale_date": {
+                        "description": "Sale timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "An RFC3339 representation of the time at which the channel was created.",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    },
+                    "taxes": {
+                        "description": "Collection of taxes.",
+                        "type": "array"
+                    },
+                    "line_items": {
+                        "description": "Collection of line items.",
+                        "type": "array"
+                    },
+                    "payments": {
+                        "description": "Collection of payments.",
+                        "type": "array"
+                    },
+                    "adjustments": {
+                        "description": "Collection of adjustments.",
+                        "type": "array"
+                    }
+                }
+            },
+            "taxes": {
+                "type": "array"
+            },
+            "line_items": {
+                "type": "array"
+            },
+            "payments": {
+                "type": "array"
+            },
+            "adjustments": {
+                "type": "array"
+            },
+            "SaleCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "SaleResponse": {
+                "type": "object",
+                "properties": {
+                    "Sale": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "SaleTax": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "rate": {
+                        "description": "Tax rate.",
+                        "type": "number"
+                    },
+                    "amount": {
+                        "description": "Payment amount.",
+                        "type": "number"
+                    }
+                }
+            },
+            "SearchResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    }
+                }
+            },
+            "SupplierCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "SupplierResponse": {
+                "type": "object",
+                "properties": {
+                    "supplier": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "SupplierSample": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Tag": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "TagCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "TagResponse": {
+                "type": "object",
+                "properties": {
+                    "Tag": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "Tax": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "rates": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "is_default": {
+                        "description": "Indicates whether the tax is used as the default one.",
+                        "type": "boolean"
+                    },
+                    "display_name": {
+                        "description": "The name of the tax used for display.",
+                        "type": "string"
+                    }
+                }
+            },
+            "rates": {
+                "type": "array"
+            },
+            "TaxCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    }
+                }
+            },
+            "TaxRate": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "rate": {
+                        "description": "Tax rate.",
+                        "type": "number"
+                    },
+                    "display_name": {
+                        "description": "The name of the tax used for display.",
+                        "type": "string"
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Auto-generated object ID.",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "User's username used for login.",
+                        "type": "string"
+                    },
+                    "display_name": {
+                        "description": "The name of the tax used for display.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Customer's email address.",
+                        "type": "string"
+                    },
+                    "email_verified_at": {
+                        "description": "The timestamp of users email verification.",
+                        "type": "string"
+                    },
+                    "restricted_outlet_id": {
+                        "description": "**deprecated** Use the `restricted_outlet_ids` instead.",
+                        "type": "string"
+                    },
+                    "restricted_outlet_ids": {
+                        "description": "A list of outlet IDs the user is associated with",
+                        "type": "array"
+                    },
+                    "account_type": {
+                        "description": "User's account type.",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "An RFC3339 representation of the time at which the channel was created.",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "deleted_at": {
+                        "description": "Deletion timestamp in UTC.",
+                        "type": "string"
+                    },
+                    "seen_at": {
+                        "description": "The timestamp of the user's last activity in the system.",
+                        "type": "string"
+                    },
+                    "target_daily": {
+                        "description": "Daily sales target for the user.",
+                        "type": "number"
+                    },
+                    "target_weekly": {
+                        "description": "Weekly sales target for the user.",
+                        "type": "number"
+                    },
+                    "target_monthly": {
+                        "description": "Monthly sales target for the user.",
+                        "type": "number"
+                    },
+                    "version": {
+                        "description": "Auto-incrementing object version number.",
+                        "type": "integer"
+                    },
+                    "permissions": {
+                        "description": "",
+                        "type": "null"
+                    },
+                    "is_primary_user": {
+                        "description": "Indicated whether this user is the primary user for the account.",
+                        "type": "boolean"
+                    },
+                    "image_source": {
+                        "description": "URL of the default-sized user's avatar.",
+                        "type": "string"
+                    },
+                    "images": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "restricted_outlet_ids": {
+                "type": "array"
+            },
+            "UserCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "An array of Brand objects wrapped in top level `data` object.",
+                        "type": "array"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "UserImages": {
+                "type": "object",
+                "properties": {
+                    "ss": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "standard": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "st": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "original": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "thumb": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "sl": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "sm": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "UserResponse": {
+                "type": "object",
+                "properties": {
+                    "User": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "VariantOption": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "The ID of the filter object.",
+                        "type": "string"
+                    }
+                }
+            },
+            "adjustment": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The Brand name.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "One of `SUPPLIER`, `OUTLET`, `STOCKTAKE`, `RETURN`.",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "The ID of the filter object.",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
