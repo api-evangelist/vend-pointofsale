@@ -1,0 +1,1170 @@
+{
+    "id": "ff24dadff9a803c07420b0eda1fb8bbd",
+    "name": "API 0.9",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "c1b439a589e7fa29c396d1e5494a920e",
+            "name": "List consignments",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of consignments.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "since",
+                    "description": "If included, returns only items modified since the given time. The provided date and time should be in **UTC** and formatted according to **ISO 8601**.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The number of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page_size",
+                    "description": "The size of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "e1de6ec125ceee6d95e8aafa086fe5ba",
+            "name": "Create a consignment",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment",
+            "description": "Creates a new consignment.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "e292db22af6760b64f5d42255e104770",
+            "name": "Get a consignment by ID",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment\/{consignment_id}",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\\s\\s\n\\s\\s\nReturns a single consignment with a given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "The ID of the consignment to get.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "76e2c11b8ae428c64553c51a94a91530",
+            "name": "Update a consignment",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment\/{consignment_id}",
+            "description": "Updates a consignment with the given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "The ID of the consignment to get.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "260c9b137dc4580818fff2a1edd8a304",
+            "name": "Delete a consignment",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment\/{consignment_id}",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nDeletes the consignment with a given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "The ID of the consignment to get.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "9d5abf3889fb182578b0219794a40f75",
+            "name": "List consignment products",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of consignment products.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_id",
+                    "description": "The ID of a consignment to filter the items for. Shouldn't be used together with the `product_id` parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "product_id",
+                    "description": "The ID of a product to filter the items for. Shouldn't be used together with the `consignment_id` parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The number of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page_size",
+                    "description": "The size of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "de341af32a0e02f0557114046d59e3df",
+            "name": "Create a consignment product",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product",
+            "description": "Adds a new product to a consignment.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "d27a038fb30542001fafb28cf239c8e4",
+            "name": "Get a single consignment product by ID",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product\/{consignment_product_id}",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single consignment product.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_product_id",
+                    "description": "The ID of the consignment to get.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "805edf415c3d060dd6ecc299d212a847",
+            "name": "Update a consignment product",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product\/{consignment_product_id}",
+            "description": "Updates an existing consignment product.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_product_id",
+                    "description": "The ID of the consignment to get.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "8dbc20895713df871958832018381d08",
+            "name": "Delete a consignment product",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product\/{consignment_product_id}",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nDeletes an item from the consignment.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "consignment_product_id",
+                    "description": "The ID of the consignment to get.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "35d3197acbd4954c522ef0da16120ff4",
+            "name": "List customers",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/customers",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of customers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "If included, searches for customers with the given unique ID. The id option cannot be used with the `code` or `email` options.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "code",
+                    "description": "If included, searches for customers with the given customer code. The code option cannot be used with id or email options.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "email",
+                    "description": "If included, searches for customers with the given email address. This is an exact match search. The email option cannot be used with the id or code options.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "since",
+                    "description": "If included, returns only items modified since the given time. The provided date and time should be in **UTC** and formatted according to **ISO 8601**.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The number of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page_size",
+                    "description": "The size of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "27dc57c7b2df5b956c0c3ad5f1e47890",
+            "name": "Create or update a customer",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/customers",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single new or updated customer object.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "f9a2ccc00828b8d3bb4eb58db05d7450",
+            "name": "List outlets",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/outlets",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of outlets.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "1959253488081f894c4e443ee5e213d9",
+            "name": "List payment types",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/payment_types",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of payment types.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "449d6702410a9dfd44a258d19cd0fb0f",
+            "name": "List products",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/products",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of products.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "order_by",
+                    "description": "Defines the attribute by which the query results should be ordered. One of: `id`(recommended), `updated_at`(default), name.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order_direction",
+                    "description": "Selects the order direction of the results returned. On of `ASC`(default), `DESC`.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "since",
+                    "description": "If included, returns only items modified since the given time. The provided date and time should be in **UTC** and formatted according to **ISO 8601**.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "active",
+                    "description": "If included, only active or inactive products will be returned. One of: '\"0\"' or '\"1\"'.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sku",
+                    "description": "If included, only the product with given sku will be returned. It may happen that there will be more products with the same sku. In this case all of them will be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "handle",
+                    "description": "If included, only products with given handle will be returned. This is useful for filtering all variants of a product, since all variants share the same handle.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The number of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page_size",
+                    "description": "The size of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "deleted",
+                    "description": "Indicates whether deleted items should be included in the result.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "dd272474801ec7c0829e96f5273d7ccf",
+            "name": "Create or update a product",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/products",
+            "description": "Returns a single new or updated product object.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "256bcff673cdd828f67ce15a634f9f0a",
+            "name": "Get a single product by ID",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/products\/{product_id}",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns an array with a single product inside it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_id",
+                    "description": "An ID of an existing product.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "29a2abd782b5bbd01d0830bbc1ea6a4e",
+            "name": "Delete a product",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/products\/{product_id}",
+            "description": "Deleted a product by ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_id",
+                    "description": "An ID of an existing product.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "99f329dac27564c3e46e685489d1ba50",
+            "name": "List register sales",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/register_sales",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of register sales.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "since",
+                    "description": "If included, returns only items modified since the given time. The provided date and time should be in **UTC** and formatted according to **ISO 8601**.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "outlet_id",
+                    "description": "If included, returns only register sales made for the given outlet, identified by ID.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "status[]",
+                    "description": "If included, returns only register sales in the given state. The status[] parameter may be used more than once; returned sales will be in any of the specified states.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The number of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page_size",
+                    "description": "The size of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "138189b06b0678ebde3946adf1331227",
+            "name": "Create or update a register sale",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/register_sales",
+            "description": "Returns a single new or updated product object.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "d46fe02c4911d86af9f3946a27cad064",
+            "name": "Get a single register sale by ID",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/register_sales\/{sale_id}",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single register sale with the given ID, in an array.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "sale_id",
+                    "description": "An ID of an existing sale",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "81a22eac870adf3218a217a4da4443aa",
+            "name": "List registers",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/registers",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of registers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "deleted",
+                    "description": "Indicates whether deleted items should be included in the result.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "2dab254189825faba4cba6c8e30950a9",
+            "name": "List suppliers",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/supplier",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of suppliers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "page",
+                    "description": "The number of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page_size",
+                    "description": "The size of the page of results to be returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "d5e9458db67dffd53ce25ee904599c37",
+            "name": "Create or update a supplier",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/supplier",
+            "description": "Returns a single supplier object.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "657611a13d449c67e72ab638a753afc1",
+            "name": "Get a single supplier by ID",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/supplier\/{supplier_id}",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single supplier with the given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "supplier_id",
+                    "description": "An ID of an existing supplier object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "6c53e6642163e99ccbb71b2466946d16",
+            "name": "Delete a supplier",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/supplier\/{supplier_id}",
+            "description": "Deletes a single supplier by ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "supplier_id",
+                    "description": "An ID of an existing supplier object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "f3232ab21b791832d3adf11dfb61e51f",
+            "name": "List taxes",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/taxes",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of taxes.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "6ce177996eb765d92995d7452ad3b9c6",
+            "name": "Create a tax",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/taxes",
+            "description": "Creates a new tax.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "9f865d5deddccb109e08b10870f67ea0",
+            "name": "Get a single tax by ID",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/taxes\/{tax_id}",
+            "description": "Returns a single tax with the given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "tax_id",
+                    "description": "An ID of an existing tax object.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "6f1ccc40bffcbff33877ab4354cf3051",
+            "name": "List users",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/users",
+            "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "35075c1d2e97b1e6a7777fd2e56146d4",
+            "name": "List webhooks",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks",
+            "description": "Returns a list of webhooks.  *__NOTE:__ This endpoint will only return webhooks created by the application which is making the request.*",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "8fbd4a3ebc67ed5807fb87db1312a16a",
+            "name": "Create a webhook",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks",
+            "description": "Creates and returns a new webhook.\n__NOTE:__ The `Content-Type` header for this request should be set to `application\/x-www-form-urlencoded`.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "data",
+                    "description": "The value of this field should be set as a string representing a JSON payload like:\n`{\"url\":\"http:\/\/123456.ngrok.io\",\"active\":true,\"type\":\"product.update\"}`",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "5795592afdbd5aa3111440c5aa0614a2",
+            "name": "Get a single webhook by ID",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks\/{webhook_id}",
+            "description": "Returns a single webhooks with the given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "webhook_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "f6b6e423224d977566f78730d251ddb4",
+            "name": "Update a webhook by ID",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks\/{webhook_id}",
+            "description": "Updates a webhook with the given `id`.\n__NOTE:__ The `Content-Type` header for this request should be set to `application\/x-www-form-urlencoded`.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "webhook_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "data",
+                    "description": "The value of this field should be set as a string representing a JSON payload like:\n`{\"url\":\"http:\/\/123456.ngrok.io\",\"active\":true,\"type\":\"product.update\"}`",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        },
+        {
+            "id": "bb0f2b72067e814f444591631eab62ea",
+            "name": "Delete a webhook by ID",
+            "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks\/{webhook_id}",
+            "description": "Deletes the webhook with the given ID.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "webhook_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "rawModeData": ""
+        }
+    ]
+}
