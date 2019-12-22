@@ -1,5 +1,5 @@
 {
-    "id": "2b5f82a0a9d28c3d665a7185fbb39a35",
+    "id": "3f345db3b9dac8859b2d14c90ae88a3f",
     "name": "API 2.0",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "aee7fbbe1957e0e4f3e16286d4b43033",
+            "id": "11c707e36e8f56c64a462008334b77f1",
             "name": "List brands",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/brands",
             "description": "Returns a paginated list of brands.",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "a44eae443f00d6d6916cd94e18d5c527",
+            "id": "ac21e1de1d1c453ab131c091d2bca6e1",
             "name": "Get a single brand",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/brands\/{brand_id}",
             "description": "Returns a single brand with a requested ID",
@@ -68,11 +68,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "0c46f537e2abe2815435b8b9ce0de4d0",
+            "id": "74a49db84c99b4759502ce386f1c4bc2",
             "name": "List consignments",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments",
             "description": "Returns a paginated list of consignments.",
@@ -120,11 +120,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "bd78d5f4bc4b53240fccbf12fc9e25b7",
+            "id": "8f1c0db56ee00f8ee0107312ae6913b5",
             "name": "Create an inventory count",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments",
             "description": "Creates a new consignment of type `STOCKTAKE`. Currently, this endpoint only supports creation of inventory counts (stock takes).",
@@ -143,11 +143,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "68762ba08aaf0ed09d4ffe48efdc2f80",
+            "id": "a95b2adcdc8e136c375597d5c681a658",
             "name": "List request records",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/channel_requests",
             "description": "Returns a list of request log records.",
@@ -216,11 +216,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "402031b2c2f411a72c955cac4e53d5bb",
+            "id": "ceca41f34ba5dc6e8c86686c2a49c66e",
             "name": "Get a single request log",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/channel_requests\/{request_log_id}",
             "description": "Returns a single request log entry with a specific ID.",
@@ -247,11 +247,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "19624ecc2c4f2fc77ec3c8e039ef3f8c",
+            "id": "46e75a5516b29d74456fa8433fc41013",
             "name": "Get a single request log as text",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/channel_requests\/{request_log_id}.txt",
             "description": "Returns a text representation of a single request log entry with a specific ID.",
@@ -278,11 +278,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "72c8f5c6dbe6dbeb463542f8f499aa2b",
+            "id": "2df5bd5efda3c3637e6a86daf6a2e795",
             "name": "List channel records",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/channels",
             "description": "Returns a list of configured channels.",
@@ -301,11 +301,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "984cc6181340994d85c8496e53391664",
+            "id": "f670bf5cbfd3d54a863504546398f0d4",
             "name": "Get a single consignment",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}",
             "description": "Returns a single consignment with the requested ID.",
@@ -332,11 +332,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "fb590714d2b2d043808247dd08656fba",
+            "id": "2d7718f3d2daf3f2d00fcead1abc0101",
             "name": "Update an inventory count",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}",
             "description": "Updates the inventory count with requested ID.",
@@ -363,11 +363,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "2324d99fdbc89e4f9237e1bc95944e75",
+            "id": "5d0b5f77d5dc31451a21f1e3b47e91cc",
             "name": "Delete a consignment",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}",
             "description": "Deletes the consignment with the given ID.",
@@ -394,11 +394,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "8ba7e525b91caa7650ef1631512d8891",
+            "id": "43aefd7fc7741a28cd94f4f90edbde27",
             "name": "List all products for a specific consignment",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}\/products",
             "description": "Returns a collection of consignment products associated with the specified consignment.",
@@ -432,11 +432,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "99858c137363919b513247a8920da1db",
+            "id": "dfc4a0ccebd6840b9e5aba28a4fce1b7",
             "name": "Adjust the inventory item count",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}\/products",
             "description": "Increases or decreases the count for a specific product within the inventory count.",
@@ -463,11 +463,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "17f9636486ecbf873a2f187f610a5573",
+            "id": "8e93c46170ceba7be15156cab4201a41",
             "name": "Delete an item from an inventory count",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/consignments\/{consignment_id}\/products\/{product_id}",
             "description": "Removes the count for a specific product from the inventory count.",
@@ -501,11 +501,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "18866ae27730a0796bca987f6b7129fc",
+            "id": "a1de4f92d3bdb3c861e61f99e4ed6474",
             "name": "List customer groups",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customer_groups",
             "description": "Returns a paginated list of customer groups.",
@@ -532,11 +532,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "cc833308fc8a97bf7c87404b2fe63705",
+            "id": "38d4bbd7c061a0b715e45a47a89bcd97",
             "name": "List customers",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers",
             "description": "Returns a paginated list of customers.",
@@ -563,11 +563,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "e5e304818c915960a42ea20819bccf69",
+            "id": "9b20ec2bc2afbc2a61ad2beb7651f754",
             "name": "Create a new customer",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers",
             "description": "Creates a new customer.",
@@ -586,11 +586,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "cada77913d61802e65f0c16ad20fe4a5",
+            "id": "1f4dae9cef40f409b41a7ac831b402a8",
             "name": "Get a single customer",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers\/{customer_id}",
             "description": "Returns a single customer with a requested ID.",
@@ -617,11 +617,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "7ad39f6127ce889b29b32bc189e7476a",
+            "id": "d0b19e625813407d3692bfe07cb2478c",
             "name": "Update a customer",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers\/{customer_id}",
             "description": "Updates the customer with the requested ID.",
@@ -648,11 +648,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "cded60ae9aad4781035b4f3ca1017177",
+            "id": "c99fa8676e0ecac0089c5827c8f749ed",
             "name": "Delete a customer",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/customers\/{customer_id}",
             "description": "Deletes the customer with the requested ID.",
@@ -679,11 +679,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "089ab1c176088105c64a754e3396be44",
+            "id": "dc2e12b01abaf2b126b335d18d93dd54",
             "name": "List inventory records",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/inventory",
             "description": "Returns a paginated list of inventory records.",
@@ -710,11 +710,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "dac93dee98057cf3faeb9873f95fe7cd",
+            "id": "837d772d131a7d5880d2509e099e317a",
             "name": "List outlet product taxes",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/outlet_taxes",
             "description": "Returns a paginated list of outlet-product-tax records.",
@@ -748,11 +748,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "fc34d2a580f8feb2ec411c3ec1c57dda",
+            "id": "ef06bcb1e91776f05b6ba92ff7fab6db",
             "name": "List outlets",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/outlets",
             "description": "Returns a collection of outlets.",
@@ -779,11 +779,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "1fc1ff4fe6ac14a6c20d94b99d7a81c2",
+            "id": "f5bd22ea3354fe086a1d504bb0dec18d",
             "name": "Get a single outlet",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/outlets\/{outlet_id}",
             "description": "Returns a single outlet with the requested ID.",
@@ -810,11 +810,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "23593014d9040143369f5a1c3ce13ed3",
+            "id": "be6d02b663aa299ab1331f691eb889dc",
             "name": "List payment types",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/payment_types",
             "description": "Returns a paginated collection of payment types.",
@@ -841,11 +841,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "0ad0aa75aeaf54162b99a90ed31920d4",
+            "id": "0cd6f98e1069f3d83d8b1c5869b01215",
             "name": "List price book products",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/price_book_products",
             "description": "Returns a paginated list of price book products.",
@@ -872,11 +872,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "0d12d136201124092146d5df2febeeda",
+            "id": "a8ba287473433916617cf959a60bef5e",
             "name": "List price books",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/price_books",
             "description": "Returns a paginated list of price books",
@@ -903,11 +903,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "2b3355ba12e852edce6b414c6ba52a8b",
+            "id": "f2a0df5283f25a3108e87a4e552dc55f",
             "name": "Get a single price book",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/price_books\/{price_book_id}",
             "description": "Returns a single price book with a requested ID",
@@ -934,11 +934,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "0e00294c7b69ddf1f14bb535c2bfa036",
+            "id": "98049e790b440043f230ea48d2c8f103",
             "name": "Get a single product_image data",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_images\/{product_image_id}",
             "description": "Returns the metadata for a single product image with a given ID.\nThis method is useful for checking the status of an image after it was uploaded.",
@@ -965,11 +965,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "ff9916f5bf5afd673e3125c3f09c2449",
+            "id": "e98319cfd6fd20321f1b3967c4d32336",
             "name": "Set image position",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_images\/{product_image_id}",
             "description": "Allows for changing the image position in the list",
@@ -996,11 +996,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "5b885c80a92c8d7c033527fadac6af2c",
+            "id": "9e99e6299c3440135a5d9e6385142283",
             "name": "Delete a product_image",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_images\/{product_image_id}",
             "description": "Deletes the product_image with the requested ID.",
@@ -1027,11 +1027,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "7adca721857f67fc8e1d5916c339e4aa",
+            "id": "662564d03253481537e341d87adec338",
             "name": "List product types",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_types",
             "description": "Returns a paginated list of product types.",
@@ -1058,11 +1058,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "ae060eeb75f3166c94b2efa04e051233",
+            "id": "1ba6558a8bdbb71f7e7656e1e831e3be",
             "name": "Get a single product type",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/product_types\/{product_type_id}",
             "description": "Returns a single product type with a given ID.",
@@ -1089,11 +1089,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "a1f708eefeaaceedf778190aef103548",
+            "id": "5a021d1a4c524ead55722fcaca142001",
             "name": "List products",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/products",
             "description": "Returns a paginated list of products.",
@@ -1120,11 +1120,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "8408e09017d4aa3fa773618d1a1181d0",
+            "id": "ac3f5fb46af9aa7008e9e314045b003f",
             "name": "Get a single product",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/products\/{product_id}",
             "description": "Returns a single product object with a given ID.",
@@ -1151,11 +1151,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "56b2815d474698eba05a4dbecbf450b6",
+            "id": "7b09f62d1c75864053d944e89cd34b6b",
             "name": "Upload an image",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/products\/{product_id}\/actions\/image_upload",
             "description": "Upload a binary file with an image to be used for a product. This request should be encoded as `multipart\/form-data`.",
@@ -1189,11 +1189,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "09d9a0b888f726974b69d25bce770234",
+            "id": "fdbebcc28e0ddd40c5249dd82c581bf1",
             "name": "Get inventory data for a single product",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/products\/{product_id}\/inventory",
             "description": "Returns inventory data for a single product in all the outlets.",
@@ -1227,11 +1227,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "02da8de49142e578ea9dace6897515c8",
+            "id": "4757cca5730a12ce10b6f4874c0f092a",
             "name": "List registers",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/registers",
             "description": "Returns a paginated list of registers.",
@@ -1258,11 +1258,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "834a7d08c846655e902fe62e36fa90d6",
+            "id": "78f4d0650dd563ea158f9517a2a86e1b",
             "name": "Get a single register",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/registers\/{register_id}",
             "description": "Returns a single register with the requested ID.",
@@ -1289,11 +1289,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "5cdd8acd3c67dda466ceafb9ecd54c39",
+            "id": "415ad1c8c04e044bf31532e6e1e9ece5",
             "name": "List Sales",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/sales",
             "description": "Returns a paginated list of sales.",
@@ -1320,11 +1320,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "0ccf87d52c365b597bd3a3161c38937e",
+            "id": "f440e374d154f3a1238af95c3441b631",
             "name": "Get a single sale",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/sales\/{sale_id}",
             "description": "Returns a single sale with a given ID.",
@@ -1351,11 +1351,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "0d70c2ffd146f44d8bea7cfcb99186f1",
+            "id": "1614d89bb977c138accbbd34d7b8c3ae",
             "name": "Search for resources",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/search",
             "description": "This endpoint allows integrators to search all of the most commonly used resources, **sales**, **products** and **customers**. Each type allowing search by a number of different parameters.\n\n### Supported resource types and attributes\n\n- **Sales**\n  - date_from\n  - date_to\n  - status\n  - invoice_number\n  - customer_id\n  - user_id\n  - outlet_id\n- **Products**\n  - sku\n  - supplier_id\n  - brand_id\n  - tag_id\n  - product_type_id\n  - variant_parent_id\n- **Customers**\n  - customer_code\n  - first_name\n",
@@ -1592,11 +1592,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "e8049c00c00c5db901daa53cc08aeec2",
+            "id": "a5bfa24396326439f637f8dda6755a46",
             "name": "List suppliers",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/suppliers",
             "description": "Returns a paginated list of suppliers.",
@@ -1623,11 +1623,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "cdba1ac5db281d382a9ee65357eed701",
+            "id": "738a366c4940e2f998f96665dfce0e65",
             "name": "Get a single supplier",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/suppliers\/{supplier_id}",
             "description": "Returns a single supplier with a given ID.",
@@ -1654,11 +1654,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "7bb1fd78819c59384dfdf236f4100180",
+            "id": "01c859fe4203a1b788a316d5114823e6",
             "name": "List tags",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/tags",
             "description": "Returns a collection of tags.",
@@ -1685,11 +1685,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "8eecfdaac5306bb77b5bdb101e892673",
+            "id": "743c7ce4f835ee0857e4b9a342aa73f8",
             "name": "Get a single tag",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/tags\/{tag_id}",
             "description": "Returns a single tag with a given ID.",
@@ -1716,11 +1716,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "1f09ba275bcd84fbe7ec1a8aff6a4986",
+            "id": "6a3afc44e9abf9394518be4fe4daa582",
             "name": "List taxes",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/taxes",
             "description": "Returns a paginated list of taxes.",
@@ -1747,11 +1747,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "c75c8ca605b8ecf969bcddcab48cd3c0",
+            "id": "0be34cd1d761a0b1fa82d6ed904fe684",
             "name": "List users",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/users",
             "description": "Returns a paginated list of users.",
@@ -1778,11 +1778,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         },
         {
-            "id": "3006b31bb4e3cd9d01fbb4579f189f0c",
+            "id": "facf0ed8668afb8be007855430a305d4",
             "name": "Get a single user",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/2.0\/users\/{user_id}",
             "description": "Returns a single user with the requested ID.",
@@ -1809,7 +1809,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "2b5f82a0a9d28c3d665a7185fbb39a35",
+            "collectionId": "3f345db3b9dac8859b2d14c90ae88a3f",
             "rawModeData": ""
         }
     ]
