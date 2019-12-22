@@ -1,5 +1,5 @@
 {
-    "id": "ff24dadff9a803c07420b0eda1fb8bbd",
+    "id": "567f0ccfa46a7102b911ee67a5537641",
     "name": "API 0.9",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "c1b439a589e7fa29c396d1e5494a920e",
+            "id": "517f0dadf24cad7126326b4c98a128dd",
             "name": "List consignments",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of consignments.",
@@ -51,11 +51,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "e1de6ec125ceee6d95e8aafa086fe5ba",
+            "id": "241251395afb919a77f07ddc3465bc5f",
             "name": "Create a consignment",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment",
             "description": "Creates a new consignment.",
@@ -74,11 +74,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "e292db22af6760b64f5d42255e104770",
+            "id": "bec7041be9fcaef917e2fc3a325fdbbf",
             "name": "Get a consignment by ID",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment\/{consignment_id}",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\\s\\s\n\\s\\s\nReturns a single consignment with a given ID.",
@@ -105,11 +105,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "76e2c11b8ae428c64553c51a94a91530",
+            "id": "0efbc9ef199cb93a7ec437f8ecd05961",
             "name": "Update a consignment",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment\/{consignment_id}",
             "description": "Updates a consignment with the given ID.",
@@ -136,11 +136,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "260c9b137dc4580818fff2a1edd8a304",
+            "id": "3105d48b619b83cdc588008b8ca6214e",
             "name": "Delete a consignment",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment\/{consignment_id}",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nDeletes the consignment with a given ID.",
@@ -167,11 +167,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "9d5abf3889fb182578b0219794a40f75",
+            "id": "8abc4b51d05470e8bcb18a9afd64117c",
             "name": "List consignment products",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of consignment products.",
@@ -219,11 +219,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "de341af32a0e02f0557114046d59e3df",
+            "id": "42a5a8d137df135f96dcf026329d1f91",
             "name": "Create a consignment product",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product",
             "description": "Adds a new product to a consignment.",
@@ -242,11 +242,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "d27a038fb30542001fafb28cf239c8e4",
+            "id": "c178074ad239079dc0ae3b53510a86c7",
             "name": "Get a single consignment product by ID",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product\/{consignment_product_id}",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single consignment product.",
@@ -273,11 +273,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "805edf415c3d060dd6ecc299d212a847",
+            "id": "808f094cbb519b0d03a0defe189c6fe9",
             "name": "Update a consignment product",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product\/{consignment_product_id}",
             "description": "Updates an existing consignment product.",
@@ -304,11 +304,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "8dbc20895713df871958832018381d08",
+            "id": "d329bc7317a4e32bedd1b429ccc8fcde",
             "name": "Delete a consignment product",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/consignment_product\/{consignment_product_id}",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nDeletes an item from the consignment.",
@@ -335,11 +335,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "35d3197acbd4954c522ef0da16120ff4",
+            "id": "74c4013375e53bd2ce9153694549ef18",
             "name": "List customers",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/customers",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of customers.",
@@ -401,11 +401,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "27dc57c7b2df5b956c0c3ad5f1e47890",
+            "id": "78b5f7e484d6c6aed5bd6b8ffc049f34",
             "name": "Create or update a customer",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/customers",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single new or updated customer object.",
@@ -424,11 +424,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "f9a2ccc00828b8d3bb4eb58db05d7450",
+            "id": "096e66c27ca621c41b1b0937d9711086",
             "name": "List outlets",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/outlets",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of outlets.",
@@ -447,11 +447,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "1959253488081f894c4e443ee5e213d9",
+            "id": "e751fa46fff27aa12ebe94b015929a6a",
             "name": "List payment types",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/payment_types",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of payment types.",
@@ -470,11 +470,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "449d6702410a9dfd44a258d19cd0fb0f",
+            "id": "a5d9c2ba6a7be7ce39af3e1385bbb59a",
             "name": "List products",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/products",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of products.",
@@ -557,11 +557,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "dd272474801ec7c0829e96f5273d7ccf",
+            "id": "dbe3e3ffa6ea74c12c289390898cb989",
             "name": "Create or update a product",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/products",
             "description": "Returns a single new or updated product object.",
@@ -580,11 +580,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "256bcff673cdd828f67ce15a634f9f0a",
+            "id": "49cb6cfe8dfce32a69e0c4dd7c718ddb",
             "name": "Get a single product by ID",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/products\/{product_id}",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns an array with a single product inside it.",
@@ -611,11 +611,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "29a2abd782b5bbd01d0830bbc1ea6a4e",
+            "id": "d7606418df305b999f5bf290a6563851",
             "name": "Delete a product",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/products\/{product_id}",
             "description": "Deleted a product by ID.",
@@ -642,11 +642,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "99f329dac27564c3e46e685489d1ba50",
+            "id": "9000ed637566487b1752d4bd883571b1",
             "name": "List register sales",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/register_sales",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of register sales.",
@@ -701,11 +701,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "138189b06b0678ebde3946adf1331227",
+            "id": "c71def41eddc1114e8f93fe1ce5d75a8",
             "name": "Create or update a register sale",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/register_sales",
             "description": "Returns a single new or updated product object.",
@@ -724,11 +724,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "d46fe02c4911d86af9f3946a27cad064",
+            "id": "93ca93659956accfc0519e29c0b1912d",
             "name": "Get a single register sale by ID",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/register_sales\/{sale_id}",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single register sale with the given ID, in an array.",
@@ -755,11 +755,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "81a22eac870adf3218a217a4da4443aa",
+            "id": "a18bab66663c7c480db06a6117acc6d8",
             "name": "List registers",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/registers",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of registers.",
@@ -786,11 +786,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "2dab254189825faba4cba6c8e30950a9",
+            "id": "c407e24e2c2fe0dc8a6e7d0772414bf9",
             "name": "List suppliers",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/supplier",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a paginated list of suppliers.",
@@ -824,11 +824,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "d5e9458db67dffd53ce25ee904599c37",
+            "id": "f8ad7434c085b29d7a232d91a8f9103f",
             "name": "Create or update a supplier",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/supplier",
             "description": "Returns a single supplier object.",
@@ -847,11 +847,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "657611a13d449c67e72ab638a753afc1",
+            "id": "aed51418750b1db7d2904bc3c6ac1a01",
             "name": "Get a single supplier by ID",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/supplier\/{supplier_id}",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single supplier with the given ID.",
@@ -878,11 +878,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "6c53e6642163e99ccbb71b2466946d16",
+            "id": "15e278148679ec0d20c6e6d770bb9c44",
             "name": "Delete a supplier",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/supplier\/{supplier_id}",
             "description": "Deletes a single supplier by ID.",
@@ -909,11 +909,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "f3232ab21b791832d3adf11dfb61e51f",
+            "id": "1fe76d1fb56a7125352d14a634bfcc6a",
             "name": "List taxes",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/taxes",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of taxes.",
@@ -932,11 +932,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "6ce177996eb765d92995d7452ad3b9c6",
+            "id": "258ec7788f2f6bc9f8055a004991644c",
             "name": "Create a tax",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/taxes",
             "description": "Creates a new tax.",
@@ -955,11 +955,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "9f865d5deddccb109e08b10870f67ea0",
+            "id": "a388bde2b9098e7468836d4d99d609a5",
             "name": "Get a single tax by ID",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/taxes\/{tax_id}",
             "description": "Returns a single tax with the given ID.",
@@ -986,11 +986,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "6f1ccc40bffcbff33877ab4354cf3051",
+            "id": "f14b0e2048d208117f110a4155b08c21",
             "name": "List users",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/users",
             "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a non-paginated list of users.",
@@ -1009,11 +1009,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "35075c1d2e97b1e6a7777fd2e56146d4",
+            "id": "d5a2a0a7b1aa8cfa72bb9af78dcecc2f",
             "name": "List webhooks",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks",
             "description": "Returns a list of webhooks.  *__NOTE:__ This endpoint will only return webhooks created by the application which is making the request.*",
@@ -1032,11 +1032,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "8fbd4a3ebc67ed5807fb87db1312a16a",
+            "id": "bade67420a16a7faa3334aa71dc80513",
             "name": "Create a webhook",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks",
             "description": "Creates and returns a new webhook.\n__NOTE:__ The `Content-Type` header for this request should be set to `application\/x-www-form-urlencoded`.",
@@ -1063,11 +1063,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "5795592afdbd5aa3111440c5aa0614a2",
+            "id": "8c41985844a24217a587ac3543a3c110",
             "name": "Get a single webhook by ID",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks\/{webhook_id}",
             "description": "Returns a single webhooks with the given ID.",
@@ -1094,11 +1094,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "f6b6e423224d977566f78730d251ddb4",
+            "id": "0d3c630d273d30b1b4be27ab88f0f349",
             "name": "Update a webhook by ID",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks\/{webhook_id}",
             "description": "Updates a webhook with the given `id`.\n__NOTE:__ The `Content-Type` header for this request should be set to `application\/x-www-form-urlencoded`.",
@@ -1132,11 +1132,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         },
         {
-            "id": "bb0f2b72067e814f444591631eab62ea",
+            "id": "6ed2b6f2ed0b9d5be34dcc8d43049abf",
             "name": "Delete a webhook by ID",
             "url": "http:\/\/{domain_prefix}.vendhq.com\/api\/webhooks\/{webhook_id}",
             "description": "Deletes the webhook with the given ID.",
@@ -1163,7 +1163,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ff24dadff9a803c07420b0eda1fb8bbd",
+            "collectionId": "567f0ccfa46a7102b911ee67a5537641",
             "rawModeData": ""
         }
     ]
